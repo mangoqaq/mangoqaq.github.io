@@ -6,16 +6,20 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
   <link rel="dns-prefetch" href="http://yoursite.com">
-  <title>Archives | Mango滴博客</title>
+  <title>Python基础语法——练习题 | Mango滴博客</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="keywords" content="Python、Web开发">
-<meta property="og:type" content="website">
-<meta property="og:title" content="Mango滴博客">
-<meta property="og:url" content="http://yoursite.com/archives/index.html">
+  <meta name="description" content="哒哒哒,做题的结果是坚持学习的动力，持续更新中……………..商城积分商城用户等级     积分兑换标准       购物钻石                100=60         8折金牌                100=50         85折银牌                100=30         9折铜牌                100=20         9">
+<meta name="keywords" content="Python、Web开发">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Python基础语法——练习题">
+<meta property="og:url" content="http://yoursite.com/2018/07/15/work1/index.html">
 <meta property="og:site_name" content="Mango滴博客">
+<meta property="og:description" content="哒哒哒,做题的结果是坚持学习的动力，持续更新中……………..商城积分商城用户等级     积分兑换标准       购物钻石                100=60         8折金牌                100=50         85折银牌                100=30         9折铜牌                100=20         9">
 <meta property="og:locale" content="default">
+<meta property="og:updated_time" content="2018-07-15T15:43:23.273Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Mango滴博客">
+<meta name="twitter:title" content="Python基础语法——练习题">
+<meta name="twitter:description" content="哒哒哒,做题的结果是坚持学习的动力，持续更新中……………..商城积分商城用户等级     积分兑换标准       购物钻石                100=60         8折金牌                100=50         85折银牌                100=30         9折铜牌                100=20         9">
   
     <link rel="alternative" href="/atom.xml" title="Mango滴博客" type="application/atom+xml">
   
@@ -149,184 +153,163 @@
             <canvas data-colors="#eaeaea" data-sectionHeight="100" data-contentId="js-content" id="myCanvas1" class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            
+            <article id="post-work1" class="article article-type-post " itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
   
+    <h1 class="article-title" itemprop="name">
+      Python基础语法——练习题
+    </h1>
   
-    
-    
-      
-      
-      <section class="archives-wrap">
-        <div class="archive-year-wrap">
-          <a href="/archives/2018" class="archive-year">2018</a>
-        </div>
-        <div class="archives">
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2018/07/15/work1/" class="archive-article-date">
+
+        
+        <a href="/2018/07/15/work1/" class="archive-article-date">
   	<time datetime="2018-07-15T15:25:02.951Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-07-15</time>
 </a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2018/07/15/work1/">Python基础语法——练习题</a>
-    </h1>
-  
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>哒哒哒,做题的结果是坚持学习的动力，持续更新中……………..<br>商城积分<br>商城用户等级     积分兑换标准       购物<br>钻石                100=60         8折<br>金牌                100=50         85折<br>银牌                100=30         9折<br>铜牌                100=20         95折<br>输入用户等级，购买商品价格？<br>输出需要的积分，实际钱数<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br></pre></td><td class="code"><pre><span class="line">from decimal import Decimal</span><br><span class="line">level=input(<span class="string">'输入你的用户等级：'</span>)</span><br><span class="line">real_price=<span class="built_in">float</span>(input(<span class="string">'想要购买的商品原价：'</span>))</span><br><span class="line">money_zhehou=0.0</span><br><span class="line">money_score=0</span><br><span class="line"><span class="keyword">if</span> level==<span class="string">'钻石'</span> :</span><br><span class="line">    tep=(Decimal(real_price)*Decimal(0.8)).quantize(Decimal(<span class="string">'0.00'</span>))</span><br><span class="line">    money_zhehou = <span class="built_in">float</span>(tep)</span><br><span class="line">    money_score=int(real_price*0.8*(100/60))</span><br><span class="line"><span class="keyword">elif</span> level==<span class="string">'金牌'</span> :</span><br><span class="line">    tep=(Decimal(real_price)*Decimal(0.85)).quantize(Decimal(<span class="string">'0.00'</span>))</span><br><span class="line">    money_zhehou = <span class="built_in">float</span>(tep)</span><br><span class="line">    money_score=int(real_price*0.85*(100/50))</span><br><span class="line"><span class="keyword">elif</span> level==<span class="string">'银牌'</span> :</span><br><span class="line">    tep=(Decimal(real_price)*Decimal(0.9)).quantize(Decimal(<span class="string">'0.00'</span>))</span><br><span class="line">    money_zhehou = <span class="built_in">float</span>(tep)</span><br><span class="line">    money_score=int(real_price*0.9*(100/30))</span><br><span class="line"><span class="keyword">elif</span> level==<span class="string">'铜牌'</span> :</span><br><span class="line">    tep=(Decimal(real_price)*Decimal(0.95)).quantize(Decimal(<span class="string">'0.00'</span>))</span><br><span class="line">    money_zhehou = <span class="built_in">float</span>(tep)</span><br><span class="line">    money_score=int(real_price*0.95*(100/20))</span><br><span class="line"><span class="keyword">else</span> :</span><br><span class="line">    <span class="built_in">print</span>(<span class="string">'输入错误，重新输入'</span>)</span><br><span class="line">    <span class="built_in">exit</span>()</span><br><span class="line"><span class="built_in">print</span>(<span class="string">'您的用户等级为&#123;&#125;，购买商品价格为&#123;&#125;，需要积分数为&#123;&#125;，实际钱数为&#123;&#125;'</span>.format(level,real_price,money_score,money_zhehou))</span><br></pre></td></tr></table></figure></p>
+<p>王者荣耀角色表</p>
+<p>角色               技能(伤害值)        技能值       每次消耗的值<br>赵云        物理攻击80  技能攻击120      500            50<br>李白        物理攻击30  技能攻击100      350            80<br>刘备        物理攻击50  技能攻击200      400            100<br>boss    10000血量<br>攻击分别需要多少次<br>组合攻击多少次<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br></pre></td><td class="code"><pre><span class="line">import math</span><br><span class="line">person=input(<span class="string">'选择英雄角色：'</span>)</span><br><span class="line">kills=input(<span class="string">'输入技能名称：'</span>)</span><br><span class="line">tep=<span class="string">'进行&#123;&#125;次&#123;&#125;攻击后可将100000血Boss打死!!!'</span></span><br><span class="line">msg=<span class="string">'技能攻击用了&#123;&#125;次\n剩余&#123;&#125;技能点\nBoss剩余&#123;&#125;血量。'</span></span><br><span class="line"><span class="keyword">if</span> person == <span class="string">'赵云'</span> :</span><br><span class="line">    <span class="keyword">if</span> kills==<span class="string">'物理攻击'</span>:</span><br><span class="line">        num=math.ceil(10000/80)<span class="comment">#攻击次数</span></span><br><span class="line">    <span class="keyword">elif</span> kills==<span class="string">'技能攻击'</span>:</span><br><span class="line">        num=math.ceil(10000/120)</span><br><span class="line">    <span class="keyword">else</span>:</span><br><span class="line">        soul_attrack=math.floor(500/50)<span class="comment">#技能攻击</span></span><br><span class="line">        body_attrack=math.ceil((10000-(500/50)*120)/80)<span class="comment">#物理攻击</span></span><br><span class="line">        num=soul_attrack+body_attrack</span><br><span class="line">        last_boom=10000-((math.floor(500/50))*120)<span class="comment">#技能攻击后剩余血量</span></span><br><span class="line">        last_num=500-((math.floor(500/50))*50)<span class="comment">#剩余技能点</span></span><br><span class="line"><span class="keyword">elif</span> person == <span class="string">'李白'</span> :</span><br><span class="line">    <span class="keyword">if</span> kills==<span class="string">'物理攻击'</span>:</span><br><span class="line">        num=math.ceil(10000/30)</span><br><span class="line">    <span class="keyword">elif</span> kills==<span class="string">'技能攻击'</span>:</span><br><span class="line">        num=math.ceil(10000/100)</span><br><span class="line">    <span class="keyword">else</span>:</span><br><span class="line">        soul_attrack=math.floor(350/80)</span><br><span class="line">        body_attrack=math.ceil((10000-(350/80)*100)/30) </span><br><span class="line">        num=soul_attrack+body_attrack</span><br><span class="line">        last_boom=10000-((math.floor(350/80))*100)</span><br><span class="line">        last_num=400-((math.floor(350/80))*80)</span><br><span class="line"><span class="keyword">elif</span> person == <span class="string">'刘备'</span>:</span><br><span class="line">    <span class="keyword">if</span> kills==<span class="string">'物理攻击'</span>:</span><br><span class="line">        num=math.ceil(10000/50)</span><br><span class="line">    <span class="keyword">elif</span> kills==<span class="string">'技能攻击'</span>:</span><br><span class="line">        num=math.ceil(10000/200)</span><br><span class="line">    <span class="keyword">else</span>:</span><br><span class="line">        soul_attrack=math.floor(400/100)</span><br><span class="line">        body_attrack=math.ceil((10000-(400/100)*200)/50) </span><br><span class="line">        num=soul_attrack+body_attrack</span><br><span class="line">        last_boom=10000-((math.floor(400/100))*200)</span><br><span class="line">        last_num=400-((math.floor(400/100))*100)</span><br><span class="line"><span class="keyword">else</span>:</span><br><span class="line">    <span class="built_in">print</span>(<span class="string">'输入错误，重新输入。'</span>)</span><br><span class="line">    <span class="built_in">exit</span>()</span><br><span class="line"><span class="keyword">if</span> kills==<span class="string">'混合攻击'</span> :</span><br><span class="line">    <span class="built_in">print</span>(tep.format(num,kills))</span><br><span class="line">    <span class="built_in">print</span>(msg.format(soul_attrack,last_num,last_boom))</span><br><span class="line"><span class="keyword">else</span>:</span><br><span class="line">    <span class="built_in">print</span>(tep.format(num,kills))</span><br></pre></td></tr></table></figure></p>
+<p>用户登陆（三次机会重试)<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line">count=2</span><br><span class="line">msg=<span class="string">''</span></span><br><span class="line"><span class="keyword">while</span> count &gt;= 0:</span><br><span class="line">    username=input(<span class="string">'请输入用户名：'</span>)</span><br><span class="line">    password=input(<span class="string">'请输入密码：'</span>)</span><br><span class="line">    <span class="keyword">if</span> username ==<span class="string">'zhangsan'</span> and password == <span class="string">'1234567890'</span>：</span><br><span class="line">        <span class="built_in">print</span>(<span class="string">'welcome back!'</span>)</span><br><span class="line">        <span class="built_in">break</span></span><br><span class="line">    <span class="keyword">else</span>:</span><br><span class="line">        <span class="keyword">if</span> count &gt; 1:</span><br><span class="line">            <span class="built_in">print</span> (<span class="string">'error you have &#123;&#125; choose'</span>.format(count))</span><br><span class="line">        <span class="keyword">else</span>:</span><br><span class="line">            <span class="built_in">print</span>(<span class="string">'no choose'</span>)</span><br><span class="line">            <span class="built_in">break</span></span><br><span class="line">    count=count-1</span><br></pre></td></tr></table></figure></p>
+<p>等待用户输入内容，检测用户输入内容中是否包含敏感字符？如果存在敏感字符提示“存在敏感字符请重新输入”，并允许用户重新输入并打印。敏感字符：“苍老师”、“嘻哈”<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">#11111111</span></span><br><span class="line">word=<span class="string">'贩毒嘻哈'</span></span><br><span class="line">str=input(<span class="string">'请输入你要发布的内容：'</span>)</span><br><span class="line"><span class="keyword">while</span>  str !=<span class="string">'E'</span>:</span><br><span class="line">    <span class="keyword">for</span> item <span class="keyword">in</span> word:</span><br><span class="line">        <span class="keyword">if</span> item <span class="keyword">in</span> str:</span><br><span class="line">            <span class="built_in">print</span> (<span class="string">'存在敏感词汇请重新输入：'</span>)</span><br><span class="line">            str=input()</span><br><span class="line">        <span class="keyword">else</span>:</span><br><span class="line">            <span class="built_in">print</span>(str)</span><br><span class="line">            <span class="built_in">print</span>(<span class="string">'如果继续输入请按I，如果退出请输入E：'</span>)</span><br><span class="line">            I=input()</span><br><span class="line">            <span class="keyword">if</span> I == <span class="string">'I'</span>:</span><br><span class="line">                str =input(<span class="string">'请输入你要发布的内容：'</span>)</span><br><span class="line">            <span class="keyword">elif</span> I==<span class="string">'E'</span>:</span><br><span class="line">                <span class="built_in">continue</span></span><br><span class="line">            <span class="keyword">else</span>:</span><br><span class="line">                <span class="built_in">print</span>(<span class="string">'输入错误'</span>)</span><br><span class="line">                <span class="built_in">exit</span>()</span><br><span class="line"><span class="built_in">print</span>(<span class="string">'ByeBye'</span>)</span><br><span class="line"><span class="built_in">exit</span>()</span><br><span class="line"><span class="comment">#22222222</span></span><br><span class="line">words = <span class="string">'不雅贩毒'</span></span><br><span class="line"><span class="keyword">while</span> True:</span><br><span class="line">    msg = input(<span class="string">'欢迎进入论坛，发帖请输入 I ;退出请输入 E '</span>)</span><br><span class="line">    <span class="keyword">if</span> msg == <span class="string">'I'</span>:</span><br><span class="line">        content = input(<span class="string">'请输入帖子内容：'</span>)</span><br><span class="line">        <span class="keyword">for</span> item <span class="keyword">in</span> words:</span><br><span class="line">            <span class="keyword">if</span> item <span class="keyword">in</span> content:</span><br><span class="line">                content = <span class="string">'你输入的内容中，包含敏感词，请重新输入'</span></span><br><span class="line">                <span class="built_in">break</span> </span><br><span class="line">        <span class="built_in">print</span>(content)</span><br><span class="line">    <span class="keyword">else</span>:</span><br><span class="line">        <span class="built_in">print</span>(<span class="string">'Bye Bye!'</span>)</span><br><span class="line">        <span class="built_in">break</span></span><br><span class="line"><span class="comment">#3333333</span></span><br><span class="line">s=<span class="string">'I'</span></span><br><span class="line"><span class="keyword">while</span>  s==<span class="string">'I'</span>:</span><br><span class="line">    str =input(<span class="string">'请输入你要发布的内容：'</span>)</span><br><span class="line">    <span class="keyword">if</span> <span class="string">'不雅'</span> <span class="keyword">in</span> str or <span class="string">'贩毒'</span> <span class="keyword">in</span> str:</span><br><span class="line">        <span class="built_in">print</span>(<span class="string">'存在关键字，请重新输入！'</span>)</span><br><span class="line">        <span class="built_in">continue</span></span><br><span class="line">    <span class="keyword">else</span>:</span><br><span class="line">        <span class="built_in">print</span>(str)</span><br><span class="line">        s=input(<span class="string">'如果继续输入请按I，如果退出请输入E：'</span>)          </span><br><span class="line"><span class="built_in">print</span>(<span class="string">'ByeBye'</span>)</span><br><span class="line"><span class="built_in">exit</span>()</span><br></pre></td></tr></table></figure></p>
+<p>开发敏感词语过滤程序，提示用户输入评论内容，如果用户输入的内容中包含特殊的字符：<br>敏感词列表 li = [“贩毒”,”自杀”]<br>则将用户输入的内容中的敏感词汇替换成***，并添加到一个列表中；<br>如果用户输入的内容没有敏感词汇，则直接添加到上述的列表中<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">li=[<span class="string">"贩毒"</span>,<span class="string">"自杀"</span>]</span><br><span class="line">li1=[]</span><br><span class="line">words=input(<span class="string">'请输入评论内容：'</span>)</span><br><span class="line"><span class="keyword">for</span> i <span class="keyword">in</span> li:</span><br><span class="line">    <span class="keyword">if</span> i <span class="keyword">in</span> words:</span><br><span class="line">        words=words.replace(i,<span class="string">'*'</span>*len(i))</span><br><span class="line">li1.append(words)</span><br><span class="line"><span class="built_in">print</span>(li1)</span><br></pre></td></tr></table></figure></p>
+<p>题目：1!+2!+3!…+100!<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">#法一</span></span><br><span class="line">sum=0</span><br><span class="line"><span class="keyword">for</span> i <span class="keyword">in</span> range(1,101):<span class="comment">#外层计算和</span></span><br><span class="line">    result=1</span><br><span class="line">    <span class="keyword">for</span> j <span class="keyword">in</span> range(1,i+1):<span class="comment">#内层计算阶层：5！=5*4*3*2*1</span></span><br><span class="line">        result=j*result</span><br><span class="line">    sum=sum+result</span><br><span class="line"><span class="built_in">print</span>(sum)</span><br><span class="line"><span class="comment">#法二</span></span><br><span class="line">sum=0</span><br><span class="line">result=1</span><br><span class="line"><span class="keyword">for</span> i <span class="keyword">in</span> range(1,101):</span><br><span class="line">    result=result*i</span><br><span class="line">    sum=result+sum</span><br><span class="line"><span class="built_in">print</span>(sum)</span><br></pre></td></tr></table></figure></p>
+<p>去重<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">l = [1,1,2,2,3,4,5,5,6,6,7,8]</span><br><span class="line"><span class="keyword">for</span> i <span class="keyword">in</span> l:</span><br><span class="line">    <span class="keyword">if</span> l.count(i)!=1:</span><br><span class="line">        del l[l.index(i)]</span><br><span class="line"><span class="built_in">print</span>(l)</span><br></pre></td></tr></table></figure></p>
 
-        <div class="article-info info-on-right">
-          
-          
+      
 
+      
+        <div class="page-reward">
+          <a href="javascript:;" class="page-reward-btn tooltip-top">
+            <div class="tooltip tooltip-east">
+            <span class="tooltip-item">
+              赏
+            </span>
+            <span class="tooltip-content">
+              <span class="tooltip-text">
+                <span class="tooltip-inner">
+                  <p class="reward-p"><i class="icon icon-quo-left"></i>谢谢你请我吃糖果<i class="icon icon-quo-right"></i></p>
+                  <div class="reward-box">
+                    
+                    
+                  </div>
+                </span>
+              </span>
+            </span>
+          </div>
+          </a>
         </div>
-        <div class="clearfix"></div>
-    </header>
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+      
+
+      
+
+      
+        
+<div class="share-btn share-icons tooltip-left">
+  <div class="tooltip tooltip-east">
+    <span class="tooltip-item">
+      <a href="javascript:;" class="share-sns share-outer">
+        <i class="icon icon-share"></i>
+      </a>
+    </span>
+    <span class="tooltip-content">
+      <div class="share-wrap">
+        <div class="share-icons">
+          <a class="weibo share-sns" href="javascript:;" data-type="weibo">
+            <i class="icon icon-weibo"></i>
+          </a>
+          <a class="weixin share-sns wxFab" href="javascript:;" data-type="weixin">
+            <i class="icon icon-weixin"></i>
+          </a>
+          <a class="qq share-sns" href="javascript:;" data-type="qq">
+            <i class="icon icon-qq"></i>
+          </a>
+          <a class="douban share-sns" href="javascript:;" data-type="douban">
+            <i class="icon icon-douban"></i>
+          </a>
+          <a class="qzone share-sns" href="javascript:;" data-type="qzone">
+            <i class="icon icon-qzone"></i>
+          </a>
+          <a class="facebook share-sns" href="javascript:;" data-type="facebook">
+            <i class="icon icon-facebook"></i>
+          </a>
+          <a class="twitter share-sns" href="javascript:;" data-type="twitter">
+            <i class="icon icon-twitter"></i>
+          </a>
+          <a class="google share-sns" href="javascript:;" data-type="google">
+            <i class="icon icon-google"></i>
+          </a>
+        </div>
+      </div>
+    </span>
+  </div>
+</div>
+
+<div class="page-modal wx-share js-wx-box">
+    <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
+    <p>扫一扫，分享到微信</p>
+    <div class="wx-qrcode">
+      <img src="//pan.baidu.com/share/qrcode?url=http://yoursite.com/2018/07/15/work1/" alt="微信分享二维码">
+    </div>
+</div>
+
+<div class="mask js-mask"></div>
+      
+      <div class="clearfix"></div>
+    </div>
   </div>
 </article>
+
   
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2018/07/15/fourth/" class="archive-article-date">
-  	<time datetime="2018-07-15T15:11:09.236Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-07-15</time>
-</a>
+<nav id="article-nav">
+  
+  
+    <a href="/2018/07/15/fourth/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">Python基础语法——基本数据类型</div>
+      <i class="icon-circle-right"></i>
+    </a>
+  
+</nav>
+
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
         </div>
-    	 
+        
+        
+    </div>
+</aside>
+
+
+
   
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2018/07/15/fourth/">Python基础语法——基本数据类型</a>
-    </h1>
+  
   
 
-        <div class="article-info info-on-right">
-          
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2018/07/14/first/" class="archive-article-date">
-  	<time datetime="2018-07-14T01:48:20.507Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-07-14</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2018/07/14/first/">Python基础语法——编码；执行Python代码方式；print()函数</a>
-    </h1>
   
 
-        <div class="article-info info-on-right">
-          
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2018/07/14/second/" class="archive-article-date">
-  	<time datetime="2018-07-14T01:48:17.025Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-07-14</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2018/07/14/second/">Python基础语法——控制语句，逻辑运算符</a>
-    </h1>
   
 
-        <div class="article-info info-on-right">
-          
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
   
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2018/07/14/third/" class="archive-article-date">
-  	<time datetime="2018-07-14T01:48:16.977Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-07-14</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2018/07/14/third/">python基础语法——组合数据类型</a>
-    </h1>
-  
-
-        <div class="article-info info-on-right">
-          
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2018/07/14/hello-world/" class="archive-article-date">
-  	<time datetime="2018-07-14T01:26:46.783Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-07-14</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2018/07/14/hello-world/">Hello World</a>
-    </h1>
-  
-
-        <div class="article-info info-on-right">
-          
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-  
-    </div></section>
-  
-
-    
 
 
           </div>
@@ -349,8 +332,8 @@
 	var yiliaConfig = {
 		mathjax: false,
 		isHome: false,
-		isPost: false,
-		isArchive: true,
+		isPost: true,
+		isArchive: false,
 		isTag: false,
 		isCategory: false,
 		open_in_new: false,
