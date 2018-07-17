@@ -8,18 +8,18 @@
   <link rel="dns-prefetch" href="http://yoursite.com">
   <title>python 定义内容内存地址状况 | Mango滴博客</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="字符串列表给新列表赋值a=[1,2,3]b=[1,2,3]a,b内存地址不同l1 = [1,2,3,4,5]l1 = l2del l1L1通过赋值给l2，他们相当于两条线拉着一个地址块，指向了相同的内存区域，del 相当于将l1的线剪掉，l1不再存在；但l2不受影响，l2=[1,2,3,4,5] 切片生成新列表l1 = [1,2,3,4,5]l2 = l1[:]del l1L1通过切片方式生成一个">
+  <meta name="description" content="因对Python各种格式的存储情况不慎了解，特此总结。 整型a=10b=10c=aprint(id(a),id(b),id(c))1539927344 1539927344 1539927344三者指向同一个地址，删除任一项时，对其他不影响。 浮点型a=1.25b=1.25c=aprint(id(a),id(b),id(c))2211326073472 2211326073400 22113260">
 <meta name="keywords" content="Python、Web开发">
 <meta property="og:type" content="article">
 <meta property="og:title" content="python 定义内容内存地址状况">
 <meta property="og:url" content="http://yoursite.com/2018/07/16/work2/index.html">
 <meta property="og:site_name" content="Mango滴博客">
-<meta property="og:description" content="字符串列表给新列表赋值a=[1,2,3]b=[1,2,3]a,b内存地址不同l1 = [1,2,3,4,5]l1 = l2del l1L1通过赋值给l2，他们相当于两条线拉着一个地址块，指向了相同的内存区域，del 相当于将l1的线剪掉，l1不再存在；但l2不受影响，l2=[1,2,3,4,5] 切片生成新列表l1 = [1,2,3,4,5]l2 = l1[:]del l1L1通过切片方式生成一个">
+<meta property="og:description" content="因对Python各种格式的存储情况不慎了解，特此总结。 整型a=10b=10c=aprint(id(a),id(b),id(c))1539927344 1539927344 1539927344三者指向同一个地址，删除任一项时，对其他不影响。 浮点型a=1.25b=1.25c=aprint(id(a),id(b),id(c))2211326073472 2211326073400 22113260">
 <meta property="og:locale" content="default">
-<meta property="og:updated_time" content="2018-07-16T13:40:43.059Z">
+<meta property="og:updated_time" content="2018-07-17T01:04:10.674Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="python 定义内容内存地址状况">
-<meta name="twitter:description" content="字符串列表给新列表赋值a=[1,2,3]b=[1,2,3]a,b内存地址不同l1 = [1,2,3,4,5]l1 = l2del l1L1通过赋值给l2，他们相当于两条线拉着一个地址块，指向了相同的内存区域，del 相当于将l1的线剪掉，l1不再存在；但l2不受影响，l2=[1,2,3,4,5] 切片生成新列表l1 = [1,2,3,4,5]l2 = l1[:]del l1L1通过切片方式生成一个">
+<meta name="twitter:description" content="因对Python各种格式的存储情况不慎了解，特此总结。 整型a=10b=10c=aprint(id(a),id(b),id(c))1539927344 1539927344 1539927344三者指向同一个地址，删除任一项时，对其他不影响。 浮点型a=1.25b=1.25c=aprint(id(a),id(b),id(c))2211326073472 2211326073400 22113260">
   
     <link rel="alternative" href="/atom.xml" title="Mango滴博客" type="application/atom+xml">
   
@@ -173,8 +173,14 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <h2 id="字符串"><a href="#字符串" class="headerlink" title="字符串"></a>字符串</h2><h2 id="列表"><a href="#列表" class="headerlink" title="列表"></a>列表</h2><h3 id="给新列表赋值"><a href="#给新列表赋值" class="headerlink" title="给新列表赋值"></a>给新列表赋值</h3><p>a=[1,2,3]<br>b=[1,2,3]<br>a,b内存地址不同<br>l1 = [1,2,3,4,5]<br>l1 = l2<br>del l1<br>L1通过赋值给l2，他们相当于两条线拉着一个地址块，指向了相同的内存区域，del 相当于将l1的线剪掉，l1不再存在；但l2不受影响，l2=[1,2,3,4,5]</p>
-<h3 id="切片生成新列表"><a href="#切片生成新列表" class="headerlink" title="切片生成新列表"></a>切片生成新列表</h3><p>l1 = [1,2,3,4,5]<br>l2 = l1[:]<br>del l1<br>L1通过切片方式生成一个新的列表，此时l2与l1列表值相同，但是他们不是同一个列表，即l2与l1分别指向了不同的内存区域。del 将l1的内存彻底释放掉，l1不再存在；但l2不受影响，l2=[1,2,3,4,5]</p>
+        <p>因对Python各种格式的存储情况不慎了解，特此总结。</p>
+<h2 id="整型"><a href="#整型" class="headerlink" title="整型"></a>整型</h2><p>a=10<br>b=10<br>c=a<br>print(id(a),id(b),id(c))<br>1539927344 1539927344 1539927344<br>三者指向同一个地址，删除任一项时，对其他不影响。</p>
+<h2 id="浮点型"><a href="#浮点型" class="headerlink" title="浮点型"></a>浮点型</h2><p>a=1.25<br>b=1.25<br>c=a<br>print(id(a),id(b),id(c))<br>2211326073472 2211326073400 2211326073472<br>a和b地址不同，a与c地址相同，删除任一项时，对其他不影响。</p>
+<h2 id="布尔型"><a href="#布尔型" class="headerlink" title="布尔型"></a>布尔型</h2><p>a=False<br>b=False<br>c=a<br>print(id(a),id(b),id(c))<br>1539436800 1539436800 1539436800<br>三者指向同一个地址，删除任一项时，对其他不影响。</p>
+<h2 id="字符串型"><a href="#字符串型" class="headerlink" title="字符串型"></a>字符串型</h2><h3 id="直接给字符串赋值"><a href="#直接给字符串赋值" class="headerlink" title="直接给字符串赋值"></a>直接给字符串赋值</h3><p>a=’hello word’<br>b=’hello word’<br>c=a<br>print(id(a),id(b),id(c))<br>2211336203376 2211335752432 2211336203376<br>当字符串中存在空格时，地址不相同。删除任一项时，对其他不影响。<br>a=’helloaword’<br>a=’helloaword’<br>b=’helloaword’<br>c=a<br>print(id(a),id(b),id(c))<br>2211336084528 2211336084528 2211336084528<br>当字符串中不存在空格时，地址相同。删除任一项时，对其他不影响。</p>
+<h3 id="切片给新字符串赋值"><a href="#切片给新字符串赋值" class="headerlink" title="切片给新字符串赋值"></a>切片给新字符串赋值</h3><p>b=a[:]<br>print(id(a),id(b))<br>2211336222064 2211336222064<br>当对字符串进行切片赋值时，两者指向同一地址。</p>
+<h2 id="列表"><a href="#列表" class="headerlink" title="列表"></a>列表</h2><h3 id="给新列表赋值"><a href="#给新列表赋值" class="headerlink" title="给新列表赋值"></a>给新列表赋值</h3><p>a=[1,2,3]<br>b=[1,2,3]<br>a,b内存地址不同<br>l1 = [1,2,3,4,5]<br>l1 = l2<br>del l1<br>l1，l2内存地址相同，l1通过赋值给l2，他们相当于两条线拉着一个地址块，指向了相同的内存区域，del 相当于将l1的线剪掉，l1不再存在；但l2不受影响，l2=[1,2,3,4,5]</p>
+<h3 id="切片生成新列表"><a href="#切片生成新列表" class="headerlink" title="切片生成新列表"></a>切片生成新列表</h3><p>l1 = [1,2,3,4,5]<br>l2 = l1[:]<br>del l1<br>l2与l1分别指向了不同的内存区域,l1通过切片方式生成一个新的列表，此时l2与l1列表值相同，但是他们不是同一个列表，即l2与l1分别指向了不同的内存区域。del 将l1的内存彻底释放掉，l1不再存在；但l2不受影响，l2=[1,2,3,4,5]</p>
 
       
 
