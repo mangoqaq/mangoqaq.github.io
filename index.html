@@ -151,6 +151,161 @@
           <div id="js-content" class="content-ll">
             
   
+    <article id="post-seven" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2018/07/19/seven/">Python基础语法——集合set</a>
+    </h1>
+  
+
+        
+        <a href="/2018/07/19/seven/" class="archive-article-date">
+  	<time datetime="2018-07-19T12:16:17.473Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-07-19</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h2 id="数据类型"><a href="#数据类型" class="headerlink" title="数据类型"></a>数据类型</h2><h3 id="集合set"><a href="#集合set" class="headerlink" title="集合set"></a>集合set</h3><h4 id="概念"><a href="#概念" class="headerlink" title="概念"></a>概念</h4><p>集合set是一个无序的数据集合，可以存储各种数据类型的元素，同时可以对集合中的元素进行新增、删除等操作，因此集合的长度是可变的。并且集合是不允许有重复元素，如果出现重复元素，除去第一个元素之外，都会被集合所忽略<br>注意：set是无序的，即存储元素到set的顺序与这些元素输出的顺序无关。set仍然是采用哈希算法，对这些元素进行存储的。</p>
+<h4 id="声明与赋值"><a href="#声明与赋值" class="headerlink" title="声明与赋值"></a>声明与赋值</h4><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">1）set1 = &#123;1,2,3&#125;   生成一个集合</span><br><span class="line">2）set1 = <span class="built_in">set</span>(&#123;1,2,3&#125;)</span><br><span class="line">3)set1 = <span class="built_in">set</span>()  </span><br><span class="line">生成一个空集合，请注意集合只能通过<span class="built_in">set</span>\(\)函数来生成空集合，而不是通过set1 = &#123;&#125;,这个表达式会生成一个空字典。</span><br></pre></td></tr></table></figure>
+<h4 id="数据类型转换"><a href="#数据类型转换" class="headerlink" title="数据类型转换"></a>数据类型转换</h4><h5 id="字符串转成集合"><a href="#字符串转成集合" class="headerlink" title="字符串转成集合"></a>字符串转成集合</h5><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">string = <span class="string">'hello'</span></span><br><span class="line">set1 = <span class="built_in">set</span>(string)</span><br><span class="line">=&#123;<span class="string">'l'</span>, <span class="string">'o'</span>, <span class="string">'h'</span>, <span class="string">'e'</span>&#125;</span><br></pre></td></tr></table></figure>
+<h5 id="列表转成集合"><a href="#列表转成集合" class="headerlink" title="列表转成集合"></a>列表转成集合</h5><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">list1 = [1,2,3]</span><br><span class="line">set1 = <span class="built_in">set</span>(list1)</span><br><span class="line">=&#123;1, 2, 3&#125;</span><br></pre></td></tr></table></figure>
+<h5 id="元组转成集合"><a href="#元组转成集合" class="headerlink" title="元组转成集合"></a>元组转成集合</h5><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">tup = (1,2,3)</span><br><span class="line">set1 = <span class="built_in">set</span>(tup)</span><br><span class="line">=&#123;1, 2, 3&#125;</span><br></pre></td></tr></table></figure>
+<h4 id="集合的操作"><a href="#集合的操作" class="headerlink" title="集合的操作"></a>集合的操作</h4><h5 id="元素的增加-add"><a href="#元素的增加-add" class="headerlink" title="元素的增加 add()"></a>元素的增加 add()</h5><p>函数格式：set.add(元素)<br>返回值：无返回值<br>结果：集合元素增加一个<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">set1=&#123;1, 2, 3&#125;</span><br><span class="line">set1.add(4)</span><br><span class="line">=&#123;1, 2, 3, 4&#125;</span><br><span class="line">!!!</span><br><span class="line"><span class="built_in">print</span>(set1.add(4))</span><br><span class="line">None</span><br><span class="line">该函数无返回值，不能用<span class="built_in">print</span>输出或其他字符承接，都会返回None</span><br></pre></td></tr></table></figure></p>
+<h5 id="元素的删除"><a href="#元素的删除" class="headerlink" title="元素的删除"></a>元素的删除</h5><p>1)remove()<br>函数格式：set.remove(元素)<br>返回值：无返回值!!!<br>结果：集合指定的元素被删除<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">set1  = &#123;1, 2, 3, 4, 5&#125;</span><br><span class="line">set1.remove(5)</span><br><span class="line">&#123;1, 2, 3, 4&#125;</span><br></pre></td></tr></table></figure></p>
+<p>2)discard()<br>函数格式：set.discard(元素)<br>返回值：无返回值!!!<br>结果：集合中指定的元素被删除<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">set1  = &#123;1, 2, 3, 4, 5&#125;</span><br><span class="line">set1.discard(5)</span><br><span class="line">&#123;1, 2, 3, 4&#125;</span><br></pre></td></tr></table></figure></p>
+<p>注意：上面两个方法，如果删除一个不存在的元素，其中remove()会报错，而discard()无反应<br>3)clear() 清空集合中所有的元素<br>函数格式：set.clear()<br>返回值：无返回值!!!<br>结果：清空集合中所有的元素<br>set1.clear()<br>4)del命令 删除集合，并释放其所占内存资源<br>del set1</p>
+<h4 id="集合运算"><a href="#集合运算" class="headerlink" title="集合运算"></a>集合运算</h4><h5 id="并集运算-或union"><a href="#并集运算-或union" class="headerlink" title="并集运算 (|)或union()"></a>并集运算 (|)或union()</h5><p>两个集合进行并集运算，即将两个集合中的元素都合并到一个新的集合中，重复的元素只出现一次。<br>例如：<br>set1 =&gt; {‘zh’, ‘tw’, ‘en’}<br>set2 =&gt; {‘jp’, ‘fr’, ‘en’}<br>set1 | set2 =&gt; {‘jp’, ‘tw’, ‘fr’, ‘zh’, ‘en’}<br>或者<br>set1.union(set2)</p>
+<h5 id="交集运算-（-amp-）或intersection"><a href="#交集运算-（-amp-）或intersection" class="headerlink" title="交集运算 （&amp;）或intersection()"></a>交集运算 （&amp;）或intersection()</h5><p>两个集合进行交集运算，即将两个集合中相同的元素合并到一个新的集合中。<br>set1 =&gt; {‘zh’, ‘tw’, ‘en’}<br>set2 =&gt; {‘jp’, ‘fr’, ‘en’}<br>set1 &amp; set2 =&gt; {‘en’}<br>或者<br>set1.intersection(set2)</p>
+<h5 id="差集运算（-）或difference"><a href="#差集运算（-）或difference" class="headerlink" title="差集运算（-）或difference()"></a>差集运算（-）或difference()</h5><p>两个集合进行差集运算，即运算符左边的集合，与运算右边的集合进行差运算，相当于使用左边集合去除与右边集合相同的元素。<br>set1 =&gt; {‘zh’, ‘tw’, ‘en’}<br>set2 =&gt; {‘jp’, ‘fr’, ‘en’}<br>set1 - set2 =&gt; {‘zh’, ‘tw’}<br>或者<br>set1.difference(set2)<br>set1 =&gt; {‘zh’, ‘tw’, ‘en’}<br>set2 =&gt; {‘jp’, ‘fr’, ‘en’}<br>set2 - set1 =&gt; {‘jp’, ‘fr’}<br>或者<br>set2.difference(set1)</p>
+<h5 id="对称差运算（-）或者symmetric-difference"><a href="#对称差运算（-）或者symmetric-difference" class="headerlink" title="对称差运算（^）或者symmetric_difference()"></a>对称差运算（^）或者symmetric_difference()</h5><p>两个集合进行对称差运算，即两个集合中除去相同元素，其他所有元素重新归并到一个新集合中。<br>set1 =&gt; {‘zh’, ‘tw’, ‘en’}<br>set2 =&gt; {‘jp’, ‘fr’, ‘en’}<br>set2 ^ set1 =&gt; {‘zh’, ‘tw’,’jp’, ‘fr’}<br>set1.symmetric_difference(set2)</p>
+<h5 id="子集与超集（父集）"><a href="#子集与超集（父集）" class="headerlink" title="子集与超集（父集）"></a>子集与超集（父集）</h5><p>set1 =&gt; {‘zh’, ‘tw’, ‘en’}<br>subset =&gt; {‘zh’, ‘tw’}<br>我们通过观察可以看到，subset中的内容，属于set1的一部分。因此，<br>subset.issubset(set1) =&gt; True<br>表示，subset是set1集合的一个子集合<br>同理，我们也可以说，set1是subset的父集合<br>set1.issuperset(subset) =&gt; True</p>
+<h4 id="集合常用函数"><a href="#集合常用函数" class="headerlink" title="集合常用函数"></a>集合常用函数</h4><h5 id="update-保留所有元素到原集合（相同元素只保留一个）"><a href="#update-保留所有元素到原集合（相同元素只保留一个）" class="headerlink" title="update() 保留所有元素到原集合（相同元素只保留一个）"></a>update() 保留所有元素到原集合（相同元素只保留一个）</h5><p>函数格式：set1.update(set2)<br>返回值：无<br>结果：我们将set2中的元素，添加到set1中，如果有相同的元素只保留一个。同时，该操作会修改set1的元素数量。<br>set1 =&gt; {‘zh’, ‘tw’, ‘en’}<br>set2 =&gt; {‘jp’, ‘fr’, ‘en’}<br>set1.update(set2)<br>set1 =&gt; {‘jp’, ‘tw’, ‘fr’, ‘zh’, ‘en’}</p>
+<h5 id="intersection-update-保留相同元素到原集合"><a href="#intersection-update-保留相同元素到原集合" class="headerlink" title="intersection_update() 保留相同元素到原集合"></a>intersection_update() 保留相同元素到原集合</h5><p>函数格式：set1.intersection_update(set2)<br>返回值：无<br>结果：我们使用set2中的元素，添加到set1中，其中，保留两个集合中相同的元素。其中，set1、set2中其他的元素被舍弃。<br>set1 =&gt; {‘zh’, ‘tw’, ‘en’}<br>set2 =&gt; {‘jp’, ‘fr’, ‘en’}<br>set1.intersection_update(set2)<br>set1 =&gt; {‘en’}</p>
+<h5 id="symmetric-difference-update-保留不同元素到原集合"><a href="#symmetric-difference-update-保留不同元素到原集合" class="headerlink" title="symmetric_difference_update() 保留不同元素到原集合"></a>symmetric_difference_update() 保留不同元素到原集合</h5><p>函数格式：symmetric_difference_update()<br>返回值：无<br>结果：我们使用set1与set2进行运算，只保留两者除去相同元素之外的元素。<br>set1 =&gt; {‘zh’, ‘tw’, ‘en’}<br>set2 =&gt; {‘jp’, ‘fr’, ‘en’}<br>set1.symmetric_difference_update(set2)<br>set1 =&gt; {‘jp’, ‘fr’, ‘zh’, ‘tw’}</p>
+
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+      
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2018/07/19/seven/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
+  
+    <article id="post-eight" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2018/07/19/eight/">Python基础语法——高级特性</a>
+    </h1>
+  
+
+        
+        <a href="/2018/07/19/eight/" class="archive-article-date">
+  	<time datetime="2018-07-19T12:07:34.822Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-07-19</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h2 id="高级特性"><a href="#高级特性" class="headerlink" title="高级特性"></a>高级特性</h2><h3 id="range"><a href="#range" class="headerlink" title="range()"></a>range()</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">for</span> i <span class="keyword">in</span> range(10):</span><br><span class="line">    <span class="built_in">print</span>(i,end=<span class="string">''</span>)</span><br><span class="line">结果为：0123456789</span><br><span class="line">list(range(0,10))</span><br><span class="line">结果为:[0, 1, 2, 3, 4, 5, 6, 7, 8, 9]</span><br><span class="line">range(0,10)<span class="comment">#</span></span><br><span class="line">返回结果：range(0, 10)</span><br></pre></td></tr></table></figure>
+<p>range()函数自身并不会自动产生整数序列，它需要使用其他方式来调用它才会产生。</p>
+<h3 id="列表推导式生成式"><a href="#列表推导式生成式" class="headerlink" title="列表推导式生成式"></a>列表推导式生成式</h3><p>格式：[表达式或函数  for x in 序列]<br>含义：通过生成式中的循环，逐一产生x值，表达式或函数使用x值进行相关运算。最终结果作为列表的元素。也就意味着，循环多少次，就会产生多少个相关元素。<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">[x*x <span class="keyword">for</span> x <span class="keyword">in</span> range(1,11) <span class="keyword">if</span> x%3==0]</span><br><span class="line">结果为：[9, 36, 81]</span><br><span class="line">dic=&#123;<span class="string">'000'</span>+str(x):chr(64+x) <span class="keyword">for</span> x <span class="keyword">in</span> range(1,6)&#125;</span><br><span class="line">结果为：&#123;<span class="string">'0001'</span>: <span class="string">'A'</span>, <span class="string">'0002'</span>: <span class="string">'B'</span>, <span class="string">'0003'</span>: <span class="string">'C'</span>, <span class="string">'0004'</span>: <span class="string">'D'</span>, <span class="string">'0005'</span>: <span class="string">'E'</span>&#125;</span><br></pre></td></tr></table></figure></p>
+<h3 id="迭代器（Iterator）"><a href="#迭代器（Iterator）" class="headerlink" title="迭代器（Iterator）"></a>迭代器（Iterator）</h3><h4 id="概念"><a href="#概念" class="headerlink" title="概念"></a>概念</h4><p>迭代器访问元素，是从第一个元素开始，依次访问后续元素直到结束。其中迭代器只能向前不能回退。包含两个方法iter()和next()。<br>iter()用来创建一个迭代器，next()用来访问下一个元素。<br>目前我们所学的字符串、列表、元组都可以创建迭代器，那么他们也是可迭代化的对象。</p>
+<h4 id="迭代器两个步骤："><a href="#迭代器两个步骤：" class="headerlink" title="迭代器两个步骤："></a>迭代器两个步骤：</h4><p>1、当调用next()函数，会将迭代器当前位置状态进行改变<br>2、会将下一个元素进行返回<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line">a=[<span class="string">'1'</span>,<span class="string">'2'</span>]</span><br><span class="line">a_iter=iter(a)</span><br><span class="line"><span class="keyword">for</span> i <span class="keyword">in</span> a_iter:</span><br><span class="line">	<span class="built_in">print</span>(i)</span><br><span class="line"></span><br><span class="line">b=[1,2,3,4,5]</span><br><span class="line">b_iter=iter(b)</span><br><span class="line">next(b_iter)</span><br><span class="line">1</span><br><span class="line"><span class="keyword">for</span> i <span class="keyword">in</span> b_iter:</span><br><span class="line">    <span class="built_in">print</span>(i,end=<span class="string">''</span>)</span><br><span class="line"></span><br><span class="line">2345</span><br></pre></td></tr></table></figure></p>
+<h4 id="迭代器的延迟作用"><a href="#迭代器的延迟作用" class="headerlink" title="迭代器的延迟作用"></a>迭代器的延迟作用</h4><p>迭代器生成的元素并不是在迭代器声明时，就准备好了的。通常时在调用迭代器需要提供该元素时生成的，也就是说只有在我们需要的时候迭代器才产生相关元素，不需要时并不会主动的生成相关元素。我们可以把迭代器看成一个容器，到我们需要时使用next()方法返回容器中的下一个值。<br>迭代器实现了工厂模式的对象，它在你每次访问下一个值的时候给你返回。</p>
+<h3 id="可迭代化（iterable）"><a href="#可迭代化（iterable）" class="headerlink" title="可迭代化（iterable）"></a>可迭代化（iterable）</h3><p>表明相关的对象可以创建迭代器对象，同时他们自身都是可以进行for数据遍历的。我们可以使用isinstance()来判断对象是否为可迭代化。<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">from collections import Iterable</span><br><span class="line">string = <span class="string">'hello'</span></span><br><span class="line"><span class="built_in">print</span>(isinstance(string, Iterable))  =&gt; True</span><br></pre></td></tr></table></figure></p>
+<p>isinstance()函数<br>函数格式：isinstance(对象，类型)<br>返回值：布尔值<br>结果：如果指定的对象属于指定的类型，那么返回True，反之返回False</p>
+<p>enumerate()函数<br>函数格式：enumerate(iterable)<br>返回值：生成一个枚举对象<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line">enum = enumerate([<span class="string">'one'</span>,<span class="string">'two'</span>,<span class="string">'three'</span>])</span><br><span class="line"><span class="keyword">for</span> i <span class="keyword">in</span> enum:</span><br><span class="line">    <span class="built_in">print</span>(i)</span><br><span class="line">    </span><br><span class="line">(0, <span class="string">'one'</span>)</span><br><span class="line">(1, <span class="string">'two'</span>)</span><br><span class="line">(2, <span class="string">'three'</span>)</span><br><span class="line"></span><br><span class="line"><span class="keyword">for</span> i,value <span class="keyword">in</span> enum:</span><br><span class="line">    <span class="built_in">print</span>(i, value)</span><br><span class="line">   </span><br><span class="line">0 one</span><br><span class="line">1 two</span><br><span class="line">2 three</span><br></pre></td></tr></table></figure></p>
+<h3 id="生成器"><a href="#生成器" class="headerlink" title="生成器"></a>生成器</h3><h4 id="创建方式"><a href="#创建方式" class="headerlink" title="创建方式"></a>创建方式</h4><p>第一种，使用列表推导式，将[]改为()，生成一个generator对象<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">(x <span class="keyword">for</span> x <span class="keyword">in</span> range(10))</span><br><span class="line">&lt;generator object &lt;genexpr&gt; at 0x00000165FD338990&gt;</span><br></pre></td></tr></table></figure></p>
+<p>第二种，使用函数方式，采用yield关键字来实现<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line">def fib():</span><br><span class="line">    a,b=0,1</span><br><span class="line">    <span class="keyword">while</span> True:</span><br><span class="line">        yield b</span><br><span class="line">        a,b=b,a+b</span><br><span class="line">f=fib()</span><br><span class="line">ls=[next(f) <span class="keyword">for</span> i <span class="keyword">in</span> range(10)]</span><br><span class="line">ls2=[next(f) <span class="keyword">for</span> i <span class="keyword">in</span> range(10)]</span><br><span class="line"><span class="built_in">print</span>(ls)</span><br><span class="line"><span class="built_in">print</span>(ls2)</span><br><span class="line">结果为：</span><br><span class="line">[1, 1, 2, 3, 5, 8, 13, 21, 34, 55]</span><br><span class="line">[89, 144, 233, 377, 610, 987, 1597, 2584, 4181, 6765]</span><br></pre></td></tr></table></figure></p>
+<h4 id="使用"><a href="#使用" class="headerlink" title="使用"></a>使用</h4><p>生成器我们通常可以认为一种特殊的迭代器，但是它不需要像迭代器一样去实现<strong>iter</strong>,<strong>next</strong>方法。只需要使用yield关键字，该关键字可以在每次调用生成器函数时起到暂停作用，并将其值进行返回。同时还会记录当前运行值的状态。</p>
+<h3 id="总结：迭代器和生成器"><a href="#总结：迭代器和生成器" class="headerlink" title="总结：迭代器和生成器"></a>总结：迭代器和生成器</h3><p>1、容器是一系列的元素集合，str、list、set、dict对象都可以看作是容器，容器都可以进行迭代（即用在while或for循环），凡是这样的容器我们都称为可迭代化对象（Iterable）。<br>2、可迭代化对象都实现了<strong>iter</strong>方法，该方法返回一个迭代器对象。<br>3、迭代器都拥有一个状态字段，用于记录下次迭代返回值。它实现了<strong>next</strong>和<strong>iter</strong>方法，迭代器不会一次性把所有的元素都加载到内存中，而是在需要的时候才生成返回结果。<br>4、生成器是一种特殊的迭代器，它的返回值不是通过return来返回的，而是通过yield来返回的。</p>
+<h3 id="生成器小栗子："><a href="#生成器小栗子：" class="headerlink" title="生成器小栗子："></a>生成器小栗子：</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br></pre></td><td class="code"><pre><span class="line">def gene(n):</span><br><span class="line">    i =1000</span><br><span class="line">    <span class="keyword">while</span> True:        </span><br><span class="line">        <span class="keyword">if</span> <span class="string">'A'</span>==n:</span><br><span class="line">            no=<span class="string">'A'</span>+str(i)         </span><br><span class="line">            yield no    <span class="comment">#返回</span></span><br><span class="line">            i += 1</span><br><span class="line">        <span class="keyword">elif</span> <span class="string">'B'</span>==n:</span><br><span class="line">            no=<span class="string">'B'</span>+str(i)</span><br><span class="line">            yield no</span><br><span class="line">            i += 1</span><br><span class="line">        <span class="keyword">elif</span> <span class="string">'C'</span>==n:</span><br><span class="line">            no=<span class="string">'C'</span>+str(i)</span><br><span class="line">            yield no</span><br><span class="line">            i += 1</span><br><span class="line">        <span class="keyword">else</span>:</span><br><span class="line">            pass  </span><br><span class="line">a=gene(<span class="string">'A'</span>)</span><br><span class="line">b=gene(<span class="string">'B'</span>)</span><br><span class="line">c=gene(<span class="string">'C'</span>)</span><br><span class="line"></span><br><span class="line"><span class="keyword">while</span> True:</span><br><span class="line">    custmer = input(<span class="string">'取就诊号，输入姓名：'</span>)</span><br><span class="line">    keshi=input(<span class="string">'输入科室（A,B,C）：'</span>)</span><br><span class="line">    <span class="keyword">if</span> <span class="string">'A'</span>==keshi:</span><br><span class="line">        <span class="built_in">print</span>(<span class="string">'患者姓名：&#123;&#125;，就诊号&#123;&#125;，请到&#123;&#125;科室就诊。'</span>.format(custmer,next(a),keshi))</span><br><span class="line">    <span class="keyword">elif</span> <span class="string">'B'</span>==keshi:</span><br><span class="line">        <span class="built_in">print</span>(<span class="string">'患者姓名：&#123;&#125;，就诊号&#123;&#125;，请到&#123;&#125;科室就诊。'</span>.format(custmer,next(b),keshi))</span><br><span class="line">    <span class="keyword">elif</span> <span class="string">'C'</span>==keshi:</span><br><span class="line">        <span class="built_in">print</span>(<span class="string">'患者姓名：&#123;&#125;，就诊号&#123;&#125;，请到&#123;&#125;科室就诊。'</span>.format(custmer,next(c),keshi))</span><br><span class="line">    <span class="keyword">else</span>:</span><br><span class="line">        pass</span><br></pre></td></tr></table></figure>
+
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+      
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2018/07/19/eight/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
+  
     <article id="post-six" class="article article-type-post  article-index" itemscope itemprop="blogPost">
   <div class="article-inner">
     
@@ -158,7 +313,7 @@
         
   
     <h1 itemprop="name">
-      <a class="article-title" href="/2018/07/18/six/">Python基础语法——组合数据类型之集合</a>
+      <a class="article-title" href="/2018/07/18/six/">Python基础语法小练习：低配购物中心1.0</a>
     </h1>
   
 
@@ -171,7 +326,8 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        
+        <p>低配购物中心1.0<br>程序基本能够运行，但还存在bug。<br>bug1:功能层1未处理成功输入错误字符的问题，走到第二个elif时会出现int与str格式不配的问题<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br><span class="line">87</span><br><span class="line">88</span><br><span class="line">89</span><br><span class="line">90</span><br><span class="line">91</span><br><span class="line">92</span><br><span class="line">93</span><br><span class="line">94</span><br><span class="line">95</span><br><span class="line">96</span><br><span class="line">97</span><br><span class="line">98</span><br><span class="line">99</span><br><span class="line">100</span><br></pre></td><td class="code"><pre><span class="line">goods = &#123;</span><br><span class="line">    <span class="string">'goods_no'</span>:[<span class="string">'10001'</span>,<span class="string">'10002'</span>,<span class="string">'10003'</span>],</span><br><span class="line">    <span class="string">'10001'</span>:&#123;    </span><br><span class="line">            <span class="string">'id'</span>:<span class="string">'10001'</span>,</span><br><span class="line">            <span class="string">'name'</span>:<span class="string">'甜甜圈'</span>,</span><br><span class="line">            <span class="string">'price'</span>:12,</span><br><span class="line">            <span class="string">'address'</span>:<span class="string">'郑州'</span>,</span><br><span class="line">            <span class="string">'num'</span>:50,</span><br><span class="line">            <span class="string">'brand'</span>:<span class="string">'apple'</span></span><br><span class="line">            &#125;,</span><br><span class="line">    <span class="string">'10002'</span>:&#123;</span><br><span class="line">            <span class="string">'id'</span>:<span class="string">'10002'</span>,</span><br><span class="line">            <span class="string">'name'</span>:<span class="string">'巧克力'</span>,</span><br><span class="line">            <span class="string">'price'</span>:20,</span><br><span class="line">            <span class="string">'address'</span>:<span class="string">'zhengzhou'</span>,</span><br><span class="line">            <span class="string">'num'</span>:100,</span><br><span class="line">            <span class="string">'brand'</span>:<span class="string">'apple'</span></span><br><span class="line">            &#125;,</span><br><span class="line">    <span class="string">'10003'</span>:&#123;</span><br><span class="line">            <span class="string">'id'</span>:<span class="string">'10003'</span>,</span><br><span class="line">            <span class="string">'name'</span>:<span class="string">'巨无霸棒棒糖'</span>,</span><br><span class="line">            <span class="string">'price'</span>:55,</span><br><span class="line">            <span class="string">'address'</span>:<span class="string">'zhengzhou'</span>,</span><br><span class="line">            <span class="string">'num'</span>:23,</span><br><span class="line">            <span class="string">'brand'</span>:<span class="string">'apple'</span></span><br><span class="line">            &#125;</span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">while</span> True:</span><br><span class="line">    <span class="built_in">print</span> (<span class="string">'******欢迎进入购物商城******'</span>)</span><br><span class="line">    <span class="built_in">print</span> (<span class="string">'      退出请按\'</span>Q\<span class="string">'或\'</span>q\<span class="string">'\'</span>)<span class="comment">#!!!此处为了格式好看，特加上了最后一个“\”,在运行时请注意</span></span><br><span class="line">    <span class="built_in">print</span>(<span class="string">'—'</span>*30)</span><br><span class="line">    <span class="built_in">print</span> (<span class="string">'商品序号如下：'</span>)</span><br><span class="line">    <span class="keyword">for</span> i <span class="keyword">in</span> goods[<span class="string">'goods_no'</span>]:<span class="comment">#显示商品序号，以供选择</span></span><br><span class="line">        <span class="built_in">print</span>(i)</span><br><span class="line">    <span class="built_in">print</span>(<span class="string">'—'</span>*30)</span><br><span class="line">    choose_no=input(<span class="string">'请输入您要查看的商品序号\n'</span>)</span><br><span class="line">    <span class="built_in">print</span>(<span class="string">'—'</span>*30)</span><br><span class="line">    <span class="keyword">if</span> choose_no ==<span class="string">'q'</span> or choose_no == <span class="string">'Q'</span>:<span class="comment">#退出程序</span></span><br><span class="line">        <span class="built_in">print</span>(<span class="string">'叮咚，欢迎下次再来！拜拜~'</span>)</span><br><span class="line">        <span class="built_in">exit</span>()</span><br><span class="line">    <span class="keyword">elif</span> choose_no <span class="keyword">in</span> goods[<span class="string">'goods_no'</span>]: <span class="comment">#输入的是字典中存在的商品序号</span></span><br><span class="line">        <span class="keyword">for</span> i <span class="keyword">in</span> goods[choose_no]:<span class="comment">#遍历字典中的商品编号显示商品信息</span></span><br><span class="line">                <span class="built_in">print</span>(i,<span class="string">':'</span>,goods[choose_no][i])<span class="comment">#循环输出该商品信息</span></span><br><span class="line">        <span class="keyword">while</span> True:</span><br><span class="line">            <span class="built_in">print</span>(<span class="string">'—'</span>*30)</span><br><span class="line">            <span class="built_in">print</span>(<span class="string">'1、购买商品'</span>)</span><br><span class="line">            <span class="built_in">print</span>(<span class="string">'2、修改商品信息'</span>)</span><br><span class="line">            <span class="built_in">print</span>(<span class="string">'3、删除商品'</span>)</span><br><span class="line">            <span class="built_in">print</span>(<span class="string">'4、添加新商品'</span>)</span><br><span class="line">            <span class="built_in">print</span>(<span class="string">'5、返回上一层'</span>)</span><br><span class="line">            <span class="built_in">print</span>(<span class="string">'—'</span>*30)</span><br><span class="line">            work_no=int(input(<span class="string">'请选择操作序号：'</span>))</span><br><span class="line">            <span class="keyword">if</span> work_no==1:<span class="comment">#1，购买商品</span></span><br><span class="line">                <span class="keyword">while</span> True:<span class="comment">#进入循环，z键返回功能层</span></span><br><span class="line">                    <span class="built_in">print</span>(<span class="string">'该商品价格：&#123;&#125;，剩余库存：&#123;&#125;'</span>.format(goods[choose_no][<span class="string">'price'</span>],goods[choose_no][<span class="string">'num'</span>]))<span class="comment">#输出现有价格和库存</span></span><br><span class="line">                    good_num=input(<span class="string">'请输入您想要的商品数量(返回上一步请按\'</span>z\<span class="string">'或\'</span>Z\<span class="string">')：\'</span>)<span class="comment">#!!!此处为了格式好看，特加上了最后一个“\”,在运行时请注意</span></span><br><span class="line">                    <span class="keyword">if</span> good_num==<span class="string">'z'</span> or good_num==<span class="string">'Z'</span>:<span class="comment">#返回功能层</span></span><br><span class="line">                        <span class="built_in">break</span></span><br><span class="line">                    <span class="keyword">elif</span> int(good_num) &lt;= goods[choose_no][<span class="string">'num'</span>]:<span class="comment">#输入的数量没有超出范围</span></span><br><span class="line">                        goods[choose_no][<span class="string">'num'</span>]=goods[choose_no][<span class="string">'num'</span>]-int(good_num)<span class="comment">#剩余库存</span></span><br><span class="line">                        <span class="built_in">print</span>(<span class="string">'&#123;&#125;个该商品总价格为：&#123;&#125;'</span>.format(int(good_num),int(good_num)*goods[choose_no][<span class="string">'price'</span>]))<span class="comment">#输出总价</span></span><br><span class="line">                    <span class="keyword">elif</span> int(good_num) &gt; goods[choose_no][<span class="string">'num'</span>]:<span class="comment">#输入的数量超范围</span></span><br><span class="line">                        <span class="built_in">print</span>(<span class="string">'超出库存范围,请重新输入数量。'</span>)</span><br><span class="line">                    <span class="keyword">else</span>:<span class="comment">#输入无效字符</span></span><br><span class="line">                        <span class="built_in">print</span>(<span class="string">'输入了错误内容，请重新输入。'</span>)</span><br><span class="line">            <span class="keyword">elif</span> work_no==2:<span class="comment">#2，修改商品信息</span></span><br><span class="line">                <span class="keyword">while</span> True:</span><br><span class="line">                    good_name=input(<span class="string">'输入您要修改的商品属性名'</span>)</span><br><span class="line">                    <span class="keyword">if</span> good_name <span class="keyword">in</span> goods[choose_no]:<span class="comment">#输入的属性名存在</span></span><br><span class="line">                        good_item = input(<span class="string">'输入对该属性的修改内容：'</span>)</span><br><span class="line">                        goods[choose_no][good_name]=[good_item]<span class="comment">#修改属性</span></span><br><span class="line">                        <span class="built_in">print</span>(good_name,<span class="string">':'</span>,goods[choose_no][good_name])<span class="comment">#显示修改结果</span></span><br><span class="line">                        <span class="built_in">break</span></span><br><span class="line">                    <span class="keyword">else</span>:<span class="comment">#输入的属性名不存在</span></span><br><span class="line">                        <span class="built_in">print</span>(<span class="string">'您输入的商品属性名不存在，请重新输入。'</span>)</span><br><span class="line">            <span class="keyword">elif</span> work_no==3:<span class="comment">#3，删除商品并返回第一层重新选择商品编号</span></span><br><span class="line">                del goods[choose_no]</span><br><span class="line">                del goods[<span class="string">'goods_no'</span>][goods[<span class="string">'goods_no'</span>].index(choose_no)]</span><br><span class="line">                <span class="built_in">print</span>(<span class="string">'已删除，请重新选择商品序号'</span>)</span><br><span class="line">                <span class="built_in">break</span></span><br><span class="line">            <span class="keyword">elif</span> work_no==4:<span class="comment">#4，添加新商品</span></span><br><span class="line">                new_good_id=input(<span class="string">'输入新商品编号（仿照1000x的格式）：'</span>)</span><br><span class="line">                goods[<span class="string">'goods_no'</span>].append(new_good_id)</span><br><span class="line">                new_good_name=input(<span class="string">'输入新商品名字：'</span>)</span><br><span class="line">                new_good_price=input(<span class="string">'输入新商品价格：'</span>)</span><br><span class="line">                new_good_address=input(<span class="string">'输入新商品产地：'</span>)</span><br><span class="line">                new_good_num=input(<span class="string">'输入新商品库存：'</span>)</span><br><span class="line">                new_good_brand=input(<span class="string">'输入新商品品牌：'</span>)</span><br><span class="line">                goods[new_good_id]=&#123;<span class="string">'id'</span>:new_good_id,</span><br><span class="line">                                    <span class="string">'name'</span>:new_good_name,</span><br><span class="line">                                    <span class="string">'price'</span>:new_good_price,</span><br><span class="line">                                    <span class="string">'address'</span>:new_good_address,</span><br><span class="line">                                    <span class="string">'brand'</span>:new_good_brand,</span><br><span class="line">                                    &#125;</span><br><span class="line">            <span class="keyword">elif</span> work_no==5:<span class="comment">#5，返回功能层</span></span><br><span class="line">                <span class="built_in">break</span></span><br><span class="line">            <span class="keyword">else</span>:<span class="comment">#输入功能序号错误，提示重新输入</span></span><br><span class="line">                <span class="built_in">print</span>(<span class="string">'您输入的商品功能序号不存在，请重新输入'</span>)</span><br><span class="line">    <span class="keyword">else</span>:<span class="comment">#输入其他字符，显示错误</span></span><br><span class="line">        <span class="built_in">print</span>(<span class="string">'您输入的商品序号不存在，请重新输入'</span>)</span><br></pre></td></tr></table></figure></p>
+
       
 
       
@@ -748,77 +904,10 @@
 
 
   
-    <article id="post-hello-world" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
   
-    <h1 itemprop="name">
-      <a class="article-title" href="/2018/07/14/hello-world/">Hello World</a>
-    </h1>
-  
-
-        
-        <a href="/2018/07/14/hello-world/" class="archive-article-date">
-  	<time datetime="2018-07-14T01:26:46.783Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-07-14</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p>Welcome to <a href="https://hexo.io/" target="_blank" rel="noopener">Hexo</a>! This is your very first post. Check <a href="https://hexo.io/docs/" target="_blank" rel="noopener">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="https://hexo.io/docs/troubleshooting.html" target="_blank" rel="noopener">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues" target="_blank" rel="noopener">GitHub</a>.</p>
-<h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo new <span class="string">"My Cool Post"</span></span><br></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/writing.html" target="_blank" rel="noopener">Writing</a></p>
-<h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo server</span><br></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/server.html" target="_blank" rel="noopener">Server</a></p>
-<h3 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo generate</span><br></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/generating.html" target="_blank" rel="noopener">Generating</a></p>
-<h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo deploy</span><br></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/deployment.html" target="_blank" rel="noopener">Deployment</a></p>
-
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2018/07/14/hello-world/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
+    <nav id="page-nav">
+      <span class="page-number current">1</span><a class="page-number" href="/page/2/">2</a><a class="extend next" rel="next" href="/page/2/">Next &raquo;</a>
+    </nav>
   
 
 
