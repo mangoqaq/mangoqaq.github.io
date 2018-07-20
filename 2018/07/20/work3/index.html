@@ -6,16 +6,20 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
   <link rel="dns-prefetch" href="http://yoursite.com">
-  <title>Archives: 2018/7 | Mango滴博客</title>
+  <title>Python基础语法——练习题 | Mango滴博客</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="keywords" content="Python、Web开发">
-<meta property="og:type" content="website">
-<meta property="og:title" content="Mango滴博客">
-<meta property="og:url" content="http://yoursite.com/archives/2018/07/index.html">
+  <meta name="description" content="哒哒哒,做题的结果是坚持学习的动力，持续更新中…………….. 博客园启动程序，首页面应该显示成如下格式：    欢迎来到博客园首页    1:请登录    2:请注册    3:文章页面    4:日记页面    5:评论页面    6:收藏页面    7:注销    8:退出程序2)，用户输入选项，3~6选项必须在用户登录成功之后，才能访问成功。3)，用户选择登录，用户名密码从字典中读取验证，三">
+<meta name="keywords" content="Python、Web开发">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Python基础语法——练习题">
+<meta property="og:url" content="http://yoursite.com/2018/07/20/work3/index.html">
 <meta property="og:site_name" content="Mango滴博客">
+<meta property="og:description" content="哒哒哒,做题的结果是坚持学习的动力，持续更新中…………….. 博客园启动程序，首页面应该显示成如下格式：    欢迎来到博客园首页    1:请登录    2:请注册    3:文章页面    4:日记页面    5:评论页面    6:收藏页面    7:注销    8:退出程序2)，用户输入选项，3~6选项必须在用户登录成功之后，才能访问成功。3)，用户选择登录，用户名密码从字典中读取验证，三">
 <meta property="og:locale" content="default">
+<meta property="og:updated_time" content="2018-07-20T13:25:54.188Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Mango滴博客">
+<meta name="twitter:title" content="Python基础语法——练习题">
+<meta name="twitter:description" content="哒哒哒,做题的结果是坚持学习的动力，持续更新中…………….. 博客园启动程序，首页面应该显示成如下格式：    欢迎来到博客园首页    1:请登录    2:请注册    3:文章页面    4:日记页面    5:评论页面    6:收藏页面    7:注销    8:退出程序2)，用户输入选项，3~6选项必须在用户登录成功之后，才能访问成功。3)，用户选择登录，用户名密码从字典中读取验证，三">
   
     <link rel="alternative" href="/atom.xml" title="Mango滴博客" type="application/atom+xml">
   
@@ -149,295 +153,156 @@
             <canvas data-colors="#eaeaea" data-sectionHeight="100" data-contentId="js-content" id="myCanvas1" class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            
+            <article id="post-work3" class="article article-type-post " itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
   
+    <h1 class="article-title" itemprop="name">
+      Python基础语法——练习题
+    </h1>
   
-    
-    
-      
-      
-      <section class="archives-wrap">
-        <div class="archive-year-wrap">
-          <a href="/archives/2018" class="archive-year">2018</a>
-        </div>
-        <div class="archives">
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2018/07/20/work3/" class="archive-article-date">
+
+        
+        <a href="/2018/07/20/work3/" class="archive-article-date">
   	<time datetime="2018-07-20T13:22:59.635Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-07-20</time>
 </a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2018/07/20/work3/">Python基础语法——练习题</a>
-    </h1>
-  
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>哒哒哒,做题的结果是坚持学习的动力，持续更新中……………..</p>
+<h2 id="博客园"><a href="#博客园" class="headerlink" title="博客园"></a>博客园</h2><p>启动程序，首页面应该显示成如下格式：<br>    欢迎来到博客园首页<br>    1:请登录<br>    2:请注册<br>    3:文章页面<br>    4:日记页面<br>    5:评论页面<br>    6:收藏页面<br>    7:注销<br>    8:退出程序<br>2)，用户输入选项，3~6选项必须在用户登录成功之后，才能访问成功。<br>3)，用户选择登录，用户名密码从字典中读取验证，三次机会，没成功则结束整个程序运行，成功之后，可以选择访问3~6项，<br>访问页面之前，必须要在打印信息，  格式为–&gt;用户:xx 在xx年xx月xx日 执行了 %s操作，<br>访问页面时，页面内容为：欢迎xx用户访问评论（文章，日记，收藏）页面<br>import time<br>import io<br>print(time.strftime(‘%Y-%m-%d’,time.localtime()))<br>io.system(‘cls’)#清屏命令<br>4)，如果用户没有注册，则可以选择注册，注册成功之后，可以自动完成登录（完成自动登录+5分），然后进入首页选择。<br>5)，注销用户是指注销用户的登录状态，使其在访问任何页面时，必须重新登录。<br>6)，退出程序为结束整个程序运行。</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br><span class="line">87</span><br><span class="line">88</span><br><span class="line">89</span><br><span class="line">90</span><br><span class="line">91</span><br><span class="line">92</span><br><span class="line">93</span><br><span class="line">94</span><br><span class="line">95</span><br><span class="line">96</span><br><span class="line">97</span><br><span class="line">98</span><br><span class="line">99</span><br><span class="line">100</span><br><span class="line">101</span><br><span class="line">102</span><br><span class="line">103</span><br><span class="line">104</span><br><span class="line">105</span><br><span class="line">106</span><br><span class="line">107</span><br><span class="line">108</span><br><span class="line">109</span><br><span class="line">110</span><br><span class="line">111</span><br><span class="line">112</span><br><span class="line">113</span><br><span class="line">114</span><br><span class="line">115</span><br><span class="line">116</span><br><span class="line">117</span><br><span class="line">118</span><br><span class="line">119</span><br><span class="line">120</span><br><span class="line">121</span><br><span class="line">122</span><br><span class="line">123</span><br><span class="line">124</span><br><span class="line">125</span><br><span class="line">126</span><br><span class="line">127</span><br><span class="line">128</span><br><span class="line">129</span><br><span class="line">130</span><br><span class="line">131</span><br><span class="line">132</span><br><span class="line">133</span><br></pre></td><td class="code"><pre><span class="line">import io</span><br><span class="line">import time</span><br><span class="line">sign_in=&#123;</span><br><span class="line">    <span class="string">'user_name_no'</span>:[<span class="string">'Tom'</span>,<span class="string">'mango'</span>],</span><br><span class="line">    <span class="string">'Tom'</span>: <span class="string">'1234'</span>,</span><br><span class="line">    <span class="string">'mango'</span>:<span class="string">'88888888'</span></span><br><span class="line">&#125;</span><br><span class="line">success=<span class="string">'未登录'</span></span><br><span class="line">fun_main=<span class="string">''</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">while</span> True:</span><br><span class="line">    <span class="built_in">print</span>(<span class="string">'-'</span>*15)</span><br><span class="line">    <span class="built_in">print</span>(<span class="string">'用户：'</span>+success)</span><br><span class="line">    <span class="built_in">print</span>(<span class="string">'欢迎来到博客园首页'</span>)</span><br><span class="line">    <span class="built_in">print</span>(<span class="string">'1:请登录'</span>)</span><br><span class="line">    <span class="built_in">print</span>(<span class="string">'2:请注册'</span>)</span><br><span class="line">    <span class="built_in">print</span>(<span class="string">'3:文章页面'</span>)</span><br><span class="line">    <span class="built_in">print</span>(<span class="string">'4:日记页面'</span>)</span><br><span class="line">    <span class="built_in">print</span>(<span class="string">'5:评论页面'</span>)</span><br><span class="line">    <span class="built_in">print</span>(<span class="string">'6:收藏页面'</span>)</span><br><span class="line">    <span class="built_in">print</span>(<span class="string">'7:注销'</span>)</span><br><span class="line">    <span class="built_in">print</span>(<span class="string">'8:退出程序'</span>)</span><br><span class="line">    <span class="built_in">print</span>(<span class="string">'-'</span>*15)</span><br><span class="line">    fun_m = input(<span class="string">'选择您要执行的功能'</span>)</span><br><span class="line">    <span class="keyword">if</span> fun_m.isdigit()==True:</span><br><span class="line">        fun_main=int(fun_m)</span><br><span class="line">        <span class="keyword">if</span> fun_main==1:<span class="comment">#登陆页面</span></span><br><span class="line">            <span class="built_in">print</span>(<span class="string">'欢迎来到博客园登录页面'</span>)</span><br><span class="line">            <span class="keyword">if</span> success <span class="keyword">in</span> sign_in.keys():</span><br><span class="line">                <span class="built_in">print</span>(<span class="string">'已登录'</span>)</span><br><span class="line">            <span class="keyword">else</span>:</span><br><span class="line">                user_name=input(<span class="string">'请输入用户名：'</span>)</span><br><span class="line">                <span class="keyword">if</span> user_name <span class="keyword">in</span> sign_in[<span class="string">'user_name_no'</span>]:<span class="comment">#在字典中查找该用户名</span></span><br><span class="line">                    count=2</span><br><span class="line">                    <span class="keyword">while</span> count&gt;=0:</span><br><span class="line">                        mima=input(<span class="string">'请输入密码：'</span>)</span><br><span class="line">                        <span class="keyword">if</span> mima ==sign_in[user_name]:<span class="comment">#密码正确时返回首页面</span></span><br><span class="line">                            <span class="built_in">print</span>(<span class="string">'登陆成功！'</span>)</span><br><span class="line">                            success=user_name</span><br><span class="line">                            <span class="built_in">print</span>(<span class="string">'用户:&#123;&#125; 在&#123;&#125;执行了登陆操作'</span>.format(user_name,time.strftime(<span class="string">'%Y-%m-%d'</span>,time.localtime())))</span><br><span class="line">                            <span class="built_in">break</span></span><br><span class="line">                        <span class="keyword">else</span>:</span><br><span class="line">                            <span class="keyword">if</span> count&gt;=1:</span><br><span class="line">                                <span class="built_in">print</span>(<span class="string">'密码错误，您还有&#123;&#125;次机会输入密码：'</span>.format(count))</span><br><span class="line">                            <span class="keyword">else</span>:</span><br><span class="line">                                <span class="built_in">print</span>(<span class="string">'三次输入密码机会用完，正在返回主页面...'</span>)</span><br><span class="line">                                <span class="built_in">break</span></span><br><span class="line">                        count=count-1</span><br><span class="line">                <span class="keyword">else</span>:<span class="comment">#该用户名不存在，请进行注册后再登陆。</span></span><br><span class="line">                    <span class="built_in">print</span>(<span class="string">'该用户名不存在，请进行注册后再登陆。'</span>)</span><br><span class="line">        <span class="keyword">elif</span> fun_main==2:<span class="comment">#注册页面</span></span><br><span class="line">            <span class="keyword">if</span> success not <span class="keyword">in</span> sign_in.keys():</span><br><span class="line">                <span class="built_in">print</span>(<span class="string">'欢迎来到博客园注册页面'</span>)</span><br><span class="line">                <span class="keyword">while</span> True:</span><br><span class="line">                    user_name=input(<span class="string">'请输入您要注册的用户名：'</span>)</span><br><span class="line">                    <span class="keyword">if</span> user_name <span class="keyword">in</span> sign_in.keys():</span><br><span class="line">                        <span class="built_in">print</span>(<span class="string">'该用户名已被占用。'</span>)</span><br><span class="line">                        <span class="built_in">continue</span></span><br><span class="line">                    <span class="keyword">else</span>:</span><br><span class="line">                        mima=input(<span class="string">'请输入您要设置的密码：'</span>)</span><br><span class="line">                        sign_in[user_name]=mima</span><br><span class="line">                        success=user_name</span><br><span class="line">                        <span class="built_in">print</span>(<span class="string">'成功注册并登陆！'</span>)</span><br><span class="line">                        <span class="built_in">break</span></span><br><span class="line">            <span class="keyword">else</span>:</span><br><span class="line">                <span class="built_in">print</span>(<span class="string">'已登录，不可注册，请选择其他操作。'</span>)</span><br><span class="line">                <span class="built_in">continue</span></span><br><span class="line">        <span class="keyword">elif</span> fun_main==3:</span><br><span class="line">            <span class="keyword">if</span> success <span class="keyword">in</span> sign_in.keys():</span><br><span class="line">                <span class="built_in">print</span>(<span class="string">'欢迎&#123;&#125;用户访问文章页面'</span>.format(user_name))</span><br><span class="line">                back1=input(<span class="string">'返回上一层请按\'</span>Z\<span class="string">'或\'</span>z\<span class="string">'\'</span>)</span><br><span class="line">                <span class="keyword">if</span> back1 ==<span class="string">'z'</span> or back1 ==<span class="string">'Z'</span>:</span><br><span class="line">                    <span class="built_in">continue</span></span><br><span class="line">                <span class="keyword">else</span>:</span><br><span class="line">                    <span class="built_in">print</span>(<span class="string">'输入错误，强制退出登陆的用户名'</span>)</span><br><span class="line">                    success=<span class="string">'未登录'</span></span><br><span class="line">                    <span class="built_in">continue</span></span><br><span class="line">            <span class="keyword">else</span>:</span><br><span class="line">                <span class="built_in">print</span>(success)</span><br><span class="line">                <span class="built_in">continue</span></span><br><span class="line">        <span class="keyword">elif</span> fun_main==4:</span><br><span class="line">            <span class="keyword">if</span> success <span class="keyword">in</span> sign_in.keys():</span><br><span class="line">                <span class="built_in">print</span>(<span class="string">'欢迎&#123;&#125;用户访问日记页面'</span>.format(user_name))</span><br><span class="line">                back1=input(<span class="string">'返回上一层请按\'</span>Z\<span class="string">'或\'</span>z\<span class="string">'\'</span>)</span><br><span class="line">                <span class="keyword">if</span> back1 ==<span class="string">'z'</span> or back1 ==<span class="string">'Z'</span>:</span><br><span class="line">                    <span class="built_in">continue</span></span><br><span class="line">                <span class="keyword">else</span>:</span><br><span class="line">                    <span class="built_in">print</span>(<span class="string">'输入错误，强制退出登陆的用户名'</span>)</span><br><span class="line">                    success=<span class="string">'未登录'</span></span><br><span class="line">                    <span class="built_in">continue</span></span><br><span class="line">            <span class="keyword">else</span>:</span><br><span class="line">                <span class="built_in">print</span>(success)</span><br><span class="line">                <span class="built_in">continue</span></span><br><span class="line">        <span class="keyword">elif</span> fun_main==5:</span><br><span class="line">            <span class="keyword">if</span> success <span class="keyword">in</span> sign_in.keys():</span><br><span class="line">                <span class="built_in">print</span>(<span class="string">'欢迎&#123;&#125;用户访问评论页面'</span>.format(user_name))</span><br><span class="line">                back1=input(<span class="string">'返回上一层请按\'</span>Z\<span class="string">'或\'</span>z\<span class="string">'\'</span>)</span><br><span class="line">                <span class="keyword">if</span> back1 ==<span class="string">'z'</span> or back1 ==<span class="string">'Z'</span>:</span><br><span class="line">                    <span class="built_in">continue</span></span><br><span class="line">                <span class="keyword">else</span>:</span><br><span class="line">                    <span class="built_in">print</span>(<span class="string">'输入错误，强制退出登陆的用户名'</span>)</span><br><span class="line">                    success=<span class="string">'未登录'</span></span><br><span class="line">                    <span class="built_in">continue</span></span><br><span class="line">            <span class="keyword">else</span>:</span><br><span class="line">                <span class="built_in">print</span>(success)</span><br><span class="line">                <span class="built_in">continue</span></span><br><span class="line">        <span class="keyword">elif</span> fun_main==6:</span><br><span class="line">            <span class="keyword">if</span> success <span class="keyword">in</span> sign_in.keys():</span><br><span class="line">                <span class="built_in">print</span>(<span class="string">'欢迎&#123;&#125;用户访问收藏页面'</span>.format(user_name))</span><br><span class="line">                back1=input(<span class="string">'返回上一层请按\'</span>Z\<span class="string">'或\'</span>z\<span class="string">'\'</span>)</span><br><span class="line">                <span class="keyword">if</span> back1 ==<span class="string">'z'</span> or back1 ==<span class="string">'Z'</span>:</span><br><span class="line">                    <span class="built_in">continue</span></span><br><span class="line">                <span class="keyword">else</span>:</span><br><span class="line">                    <span class="built_in">print</span>(<span class="string">'输入错误，强制退出登陆的用户名'</span>)</span><br><span class="line">                    success=<span class="string">'未登录'</span></span><br><span class="line">                    <span class="built_in">continue</span></span><br><span class="line">            <span class="keyword">else</span>:</span><br><span class="line">                <span class="built_in">print</span>(success)</span><br><span class="line">                <span class="built_in">continue</span></span><br><span class="line">        <span class="keyword">elif</span> fun_main==7:</span><br><span class="line">            <span class="keyword">if</span> success <span class="keyword">in</span> sign_in.keys():</span><br><span class="line">                success=<span class="string">'未登录'</span></span><br><span class="line">                <span class="built_in">continue</span></span><br><span class="line">            <span class="keyword">else</span>:</span><br><span class="line">                <span class="built_in">print</span>(success)</span><br><span class="line">                <span class="built_in">continue</span></span><br><span class="line">        <span class="keyword">elif</span> fun_main==8:<span class="comment">#退出程序</span></span><br><span class="line">            <span class="built_in">print</span>(<span class="string">'拜拜~欢迎下次再来！'</span>)</span><br><span class="line">            <span class="built_in">exit</span>()</span><br><span class="line">        <span class="keyword">else</span>:</span><br><span class="line">            <span class="built_in">print</span>(<span class="string">'输入的数字不是功能序号，请重新输入！\n'</span>)</span><br><span class="line">    <span class="keyword">else</span>:</span><br><span class="line">        <span class="built_in">print</span>(<span class="string">'输入内容不是序号，请重新输入！\n'</span>)</span><br></pre></td></tr></table></figure>
+      
 
-        <div class="article-info info-on-right">
-          
-          
-
+      
+        <div class="page-reward">
+          <a href="javascript:;" class="page-reward-btn tooltip-top">
+            <div class="tooltip tooltip-east">
+            <span class="tooltip-item">
+              赏
+            </span>
+            <span class="tooltip-content">
+              <span class="tooltip-text">
+                <span class="tooltip-inner">
+                  <p class="reward-p"><i class="icon icon-quo-left"></i>谢谢你请我吃糖果<i class="icon icon-quo-right"></i></p>
+                  <div class="reward-box">
+                    
+                    
+                  </div>
+                </span>
+              </span>
+            </span>
+          </div>
+          </a>
         </div>
-        <div class="clearfix"></div>
-    </header>
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+      
+
+      
+
+      
+        
+<div class="share-btn share-icons tooltip-left">
+  <div class="tooltip tooltip-east">
+    <span class="tooltip-item">
+      <a href="javascript:;" class="share-sns share-outer">
+        <i class="icon icon-share"></i>
+      </a>
+    </span>
+    <span class="tooltip-content">
+      <div class="share-wrap">
+        <div class="share-icons">
+          <a class="weibo share-sns" href="javascript:;" data-type="weibo">
+            <i class="icon icon-weibo"></i>
+          </a>
+          <a class="weixin share-sns wxFab" href="javascript:;" data-type="weixin">
+            <i class="icon icon-weixin"></i>
+          </a>
+          <a class="qq share-sns" href="javascript:;" data-type="qq">
+            <i class="icon icon-qq"></i>
+          </a>
+          <a class="douban share-sns" href="javascript:;" data-type="douban">
+            <i class="icon icon-douban"></i>
+          </a>
+          <a class="qzone share-sns" href="javascript:;" data-type="qzone">
+            <i class="icon icon-qzone"></i>
+          </a>
+          <a class="facebook share-sns" href="javascript:;" data-type="facebook">
+            <i class="icon icon-facebook"></i>
+          </a>
+          <a class="twitter share-sns" href="javascript:;" data-type="twitter">
+            <i class="icon icon-twitter"></i>
+          </a>
+          <a class="google share-sns" href="javascript:;" data-type="google">
+            <i class="icon icon-google"></i>
+          </a>
+        </div>
+      </div>
+    </span>
+  </div>
+</div>
+
+<div class="page-modal wx-share js-wx-box">
+    <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
+    <p>扫一扫，分享到微信</p>
+    <div class="wx-qrcode">
+      <img src="//pan.baidu.com/share/qrcode?url=http://yoursite.com/2018/07/20/work3/" alt="微信分享二维码">
+    </div>
+</div>
+
+<div class="mask js-mask"></div>
+      
+      <div class="clearfix"></div>
+    </div>
   </div>
 </article>
+
   
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2018/07/19/seven/" class="archive-article-date">
-  	<time datetime="2018-07-19T12:16:17.473Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-07-19</time>
-</a>
+<nav id="article-nav">
+  
+  
+    <a href="/2018/07/19/seven/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">Python基础语法——集合set</div>
+      <i class="icon-circle-right"></i>
+    </a>
+  
+</nav>
+
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
         </div>
-    	 
+        
+        
+    </div>
+</aside>
+
+
+
   
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2018/07/19/seven/">Python基础语法——集合set</a>
-    </h1>
+  
   
 
-        <div class="article-info info-on-right">
-          
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2018/07/19/eight/" class="archive-article-date">
-  	<time datetime="2018-07-19T12:07:34.822Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-07-19</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2018/07/19/eight/">Python基础语法——高级特性</a>
-    </h1>
   
 
-        <div class="article-info info-on-right">
-          
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2018/07/18/six/" class="archive-article-date">
-  	<time datetime="2018-07-18T11:51:00.339Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-07-18</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2018/07/18/six/">Python基础语法小练习：低配购物中心1.0</a>
-    </h1>
   
 
-        <div class="article-info info-on-right">
-          
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2018/07/17/five/" class="archive-article-date">
-  	<time datetime="2018-07-17T13:29:23.713Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-07-17</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2018/07/17/five/">Python基础语法——组合数据类型之字典</a>
-    </h1>
-  
-
-        <div class="article-info info-on-right">
-          
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2018/07/16/work2/" class="archive-article-date">
-  	<time datetime="2018-07-16T13:07:45.303Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-07-16</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2018/07/16/work2/">python 定义内容内存地址状况（包括浅拷贝，深拷贝）</a>
-    </h1>
-  
-
-        <div class="article-info info-on-right">
-          
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2018/07/15/work1/" class="archive-article-date">
-  	<time datetime="2018-07-15T15:25:02.951Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-07-15</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2018/07/15/work1/">Python基础语法——练习题</a>
-    </h1>
-  
-
-        <div class="article-info info-on-right">
-          
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2018/07/15/fourth/" class="archive-article-date">
-  	<time datetime="2018-07-15T15:11:09.236Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-07-15</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2018/07/15/fourth/">Python基础语法——基本数据类型</a>
-    </h1>
-  
-
-        <div class="article-info info-on-right">
-          
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2018/07/14/first/" class="archive-article-date">
-  	<time datetime="2018-07-14T01:48:20.507Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-07-14</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2018/07/14/first/">Python基础语法——编码；执行Python代码方式；print()函数；变量</a>
-    </h1>
-  
-
-        <div class="article-info info-on-right">
-          
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2018/07/14/second/" class="archive-article-date">
-  	<time datetime="2018-07-14T01:48:17.025Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-07-14</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2018/07/14/second/">Python基础语法——控制语句，逻辑运算符</a>
-    </h1>
-  
-
-        <div class="article-info info-on-right">
-          
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-  
-    </div></section>
-  
-
-    
-    <nav id="page-nav">
-      <span class="page-number current">1</span><a class="page-number" href="/archives/2018/07/page/2/">2</a><a class="extend next" rel="next" href="/archives/2018/07/page/2/">Next &raquo;</a>
-    </nav>
   
 
 
@@ -461,8 +326,8 @@
 	var yiliaConfig = {
 		mathjax: false,
 		isHome: false,
-		isPost: false,
-		isArchive: true,
+		isPost: true,
+		isArchive: false,
 		isTag: false,
 		isCategory: false,
 		open_in_new: false,
