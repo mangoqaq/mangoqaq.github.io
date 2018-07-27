@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <meta charset="utf-8">
+  <meta charset="utf_8">
   
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
@@ -155,6 +155,53 @@
           <div id="js-content" class="content-ll">
             
   
+    <article id="post-10" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br></pre></td><td class="code"><pre><span class="line">局部变量与全局变量</span><br><span class="line">1）Python中，函数在调用的时候Python才会给函数一个内存地址，用来执行函数内部的相关代码。</span><br><span class="line">2)Python程序在运行时，首先会将程序最外部的变量载入内容，并给其分配相关的内存空间。我们成这种变量为全局变量。</span><br><span class="line">3）函数中声明的变量，只有在函数被执行时，才会被分配内存空间进行执行。我们成这种变量为局部变量。</span><br><span class="line">4）Python程序执行的过程中，执行函数时首先会检查其函数内部的局部变量是否存在，如果存在就调用它，如果不存在就从外部全局变量中进行调用，如果仍然没有发现相关内容，则报错。</span><br><span class="line">5）globals()与locals()</span><br><span class="line">在Python中，通过globals()观察全局作用域中内容，包括：内置函数、自定义函数、全局变量；通过locals()观察局部作用域中的内容，包括：局部变量，嵌套函数（内部函数）inner </span><br><span class="line">6）当函数中出现嵌套情况时，最内层函数执行调用变量，会采用“就近原则”即先查找自身范围内的变量，如果没有找到，则向上查找，直到程序最外部结束。</span><br><span class="line"></span><br><span class="line">7）global与nonlocal</span><br><span class="line">global用来修饰局部变量时，表示该变量将作为全局变量来使用。即不仅在函数中可以被调用，同时在文件最外部也可以被调用。</span><br><span class="line">nonlocal用来修饰嵌套函数内部的变量，对父级作用域（外层函数）中的变量进行引用和修改，那么从该层(包括父级)以下都将调用该变量的值。注意，该关键字只能影响其直接父级函数。</span><br><span class="line">使用global关键字修饰的变量之前可以并不存在</span><br><span class="line">而使用nonlocal关键字修饰的变量在嵌套作用域中必须已经存在。</span><br><span class="line"></span><br><span class="line">总结：在函数中定义的变量，我们成为局部变量。包括在函数内部定义的变量、作为参数传递进来的变量。局部变量起作用的范围，我们称为局部作用域。因为Python在调用局部变量时，需要给它分配内存地址，我们称为这个地址为局部命名空间。</span><br><span class="line">在文件最外层定义的变量，我们成为全局变量，可以在文件中的任意位置进行调用。全局变量起作用的范围，我们称为全局作用域。Python在载入文件时，就需要给全局变量分配内存地址，这个地址我们称为全局命名空间。</span><br><span class="line"></span><br><span class="line">Python运行时处理变量的步骤：</span><br><span class="line">1、从Python解释器开始执行之后，就在内存中开辟里一个空间，每当遇到一个变量的时候，就把变量名和值之间对应的关系记录下来，但是当遇到函数定义的时候，解释器只是象征性的将函数名读入内存，表示知道这个函数存在了，至于函数内部的变量和逻辑，解释器根本不关心。</span><br><span class="line">2、函数执行时，函数中的变量会储存在新开辟出来的内存中，函数中的变量只能在函数内部使用，并且会随着函数执行完毕，这块内存中的所有内容也会被清空。</span><br><span class="line"></span><br><span class="line"><span class="comment">#全局变量可以在局部变量中引用，以相同名字重新在局部变量中赋值，不能在函数中直接更改全局变量的值</span></span><br><span class="line"><span class="comment">#声明与应用全局变量只能选择一个使用，否则会报错提醒局部变量在被赋值前已经声明（即全局变量已声明）</span></span><br><span class="line">count=2         <span class="comment">#全局变量count</span></span><br><span class="line">def sign():</span><br><span class="line">    <span class="string">''</span><span class="string">'</span></span><br><span class="line"><span class="string">    #print(count)    #在函数中引用全局变量count的值，输出为2</span></span><br><span class="line"><span class="string">    #count=count-1  #报错！！！！函数中不能改变全局变量的值</span></span><br><span class="line"><span class="string">    '</span><span class="string">''</span></span><br><span class="line">    count=1         <span class="comment">#在函数中重新声明一个count，输出为1</span></span><br><span class="line">    count=count-1   <span class="comment">#可对在函数中声明的内容进行改变 </span></span><br><span class="line">    <span class="built_in">print</span>(globals())</span><br><span class="line">    <span class="built_in">print</span>(locals())</span><br><span class="line">    <span class="built_in">return</span> count</span><br><span class="line"></span><br><span class="line"><span class="built_in">print</span>(sign())</span><br><span class="line"></span><br><span class="line">函数嵌套</span><br><span class="line">根据python中，对函数的载入和调用特点，我们可以清楚的看到，当python运行相关文件时，如果遇到函数时，会先将其名字载入到内存中（即为函数名指定一个内存地址）。因此我们在使用函数时，可以有以下三种情况：</span><br><span class="line">函数名本质上就是函数的内存地址</span><br><span class="line">1)可以被引用</span><br><span class="line">def f1():</span><br><span class="line">    <span class="built_in">print</span>(<span class="string">'11111'</span>)</span><br><span class="line">a=f1</span><br><span class="line"><span class="built_in">print</span>(a)<span class="comment">#返回地址&lt;function f1 at 0x000001A9BA3198C8&gt;</span></span><br><span class="line"></span><br><span class="line">2)可以被当做容器类型的元素使用</span><br><span class="line">def f1():</span><br><span class="line">    <span class="built_in">print</span>(<span class="string">'111111'</span>)</span><br><span class="line"></span><br><span class="line">def f2():</span><br><span class="line">    <span class="built_in">print</span>(<span class="string">'222222'</span>)</span><br><span class="line">    <span class="built_in">return</span> <span class="string">'1234567890'</span></span><br><span class="line"></span><br><span class="line">def f3():</span><br><span class="line">    <span class="built_in">print</span>(<span class="string">'333333'</span>)</span><br><span class="line"></span><br><span class="line">li=[f1,f2,f3]</span><br><span class="line"><span class="built_in">print</span>(li)<span class="comment">#返回函数的地址[&lt;function f1 at 0x000001A9BA3198C8&gt;, &lt;function f2 at 0x000001A9BA319950&gt;, &lt;function f3 at 0x000001A9BA3199D8&gt;]</span></span><br><span class="line"><span class="built_in">print</span>(li[1]())<span class="comment">#222222 1234567890</span></span><br><span class="line"><span class="built_in">print</span>(li[1])<span class="comment">#&lt;function f2 at 0x00000178E9B29950&gt;</span></span><br><span class="line"></span><br><span class="line">3)可以当作函数的参数和返回值型的元素</span><br><span class="line">def f1():</span><br><span class="line">    <span class="built_in">print</span>(<span class="string">'ok'</span>)</span><br><span class="line">def f2(x):</span><br><span class="line">    x()</span><br><span class="line">f2(f1)</span><br><span class="line"></span><br><span class="line">def f2():</span><br><span class="line">    def f1():</span><br><span class="line">        <span class="built_in">print</span>(<span class="string">'ok'</span>)</span><br><span class="line">f2()</span><br></pre></td></tr></table></figure>
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+      
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2018/07/24/10/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
+  
     <article id="post-work3" class="article article-type-post  article-index" itemscope itemprop="blogPost">
   <div class="article-inner">
     
@@ -219,19 +266,19 @@
 
 
   
-    <article id="post-seven" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+    <article id="post-07" class="article article-type-post  article-index" itemscope itemprop="blogPost">
   <div class="article-inner">
     
       <header class="article-header">
         
   
     <h1 itemprop="name">
-      <a class="article-title" href="/2018/07/19/seven/">Python基础语法——集合set</a>
+      <a class="article-title" href="/2018/07/19/07/">Python基础语法——集合set</a>
     </h1>
   
 
         
-        <a href="/2018/07/19/seven/" class="archive-article-date">
+        <a href="/2018/07/19/07/" class="archive-article-date">
   	<time datetime="2018-07-19T12:16:17.473Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-07-19</time>
 </a>
         
@@ -268,7 +315,7 @@
 
       
         <p class="article-more-link">
-          <a class="article-more-a" href="/2018/07/19/seven/">展开全文 >></a>
+          <a class="article-more-a" href="/2018/07/19/07/">展开全文 >></a>
         </p>
       
 
@@ -298,19 +345,19 @@
 
 
   
-    <article id="post-eight" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+    <article id="post-08" class="article article-type-post  article-index" itemscope itemprop="blogPost">
   <div class="article-inner">
     
       <header class="article-header">
         
   
     <h1 itemprop="name">
-      <a class="article-title" href="/2018/07/19/eight/">Python基础语法——高级特性</a>
+      <a class="article-title" href="/2018/07/19/08/">Python基础语法——高级特性</a>
     </h1>
   
 
         
-        <a href="/2018/07/19/eight/" class="archive-article-date">
+        <a href="/2018/07/19/08/" class="archive-article-date">
   	<time datetime="2018-07-19T12:07:34.822Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-07-19</time>
 </a>
         
@@ -344,7 +391,7 @@
 
       
         <p class="article-more-link">
-          <a class="article-more-a" href="/2018/07/19/eight/">展开全文 >></a>
+          <a class="article-more-a" href="/2018/07/19/08/">展开全文 >></a>
         </p>
       
 
@@ -437,19 +484,19 @@
 
 
   
-    <article id="post-five" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+    <article id="post-05" class="article article-type-post  article-index" itemscope itemprop="blogPost">
   <div class="article-inner">
     
       <header class="article-header">
         
   
     <h1 itemprop="name">
-      <a class="article-title" href="/2018/07/17/five/">Python基础语法——组合数据类型之字典</a>
+      <a class="article-title" href="/2018/07/17/05/">Python基础语法——组合数据类型之字典</a>
     </h1>
   
 
         
-        <a href="/2018/07/17/five/" class="archive-article-date">
+        <a href="/2018/07/17/05/" class="archive-article-date">
   	<time datetime="2018-07-17T13:29:23.713Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-07-17</time>
 </a>
         
@@ -484,7 +531,7 @@
 
       
         <p class="article-more-link">
-          <a class="article-more-a" href="/2018/07/17/five/">展开全文 >></a>
+          <a class="article-more-a" href="/2018/07/17/05/">展开全文 >></a>
         </p>
       
 
@@ -540,8 +587,8 @@
 <h2 id="布尔型"><a href="#布尔型" class="headerlink" title="布尔型"></a>布尔型</h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">a=False</span><br><span class="line">b=False</span><br><span class="line">c=a</span><br><span class="line"><span class="built_in">print</span>(id(a),id(b),id(c))</span><br><span class="line">1539436800 1539436800 1539436800</span><br><span class="line">三者指向同一个地址，删除任一项时，对其他不影响。</span><br></pre></td></tr></table></figure>
 <h2 id="字符串型"><a href="#字符串型" class="headerlink" title="字符串型"></a>字符串型</h2><h3 id="直接给字符串赋值"><a href="#直接给字符串赋值" class="headerlink" title="直接给字符串赋值"></a>直接给字符串赋值</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">a=<span class="string">'hello word'</span></span><br><span class="line">b=<span class="string">'hello word'</span></span><br><span class="line">c=a</span><br><span class="line"><span class="built_in">print</span>(id(a),id(b),id(c))</span><br><span class="line">2211336203376 2211335752432 2211336203376</span><br><span class="line">当字符串中存在空格时，地址不相同。删除任一项时，对其他不影响。</span><br><span class="line">a=<span class="string">'helloaword'</span></span><br><span class="line">b=<span class="string">'helloaword'</span></span><br><span class="line">c=a</span><br><span class="line"><span class="built_in">print</span>(id(a),id(b),id(c))</span><br><span class="line">2211336084528 2211336084528 2211336084528</span><br><span class="line">当字符串中不存在空格时，地址相同。删除任一项时，对其他不影响。</span><br></pre></td></tr></table></figure>
 <h3 id="切片给新字符串赋值"><a href="#切片给新字符串赋值" class="headerlink" title="切片给新字符串赋值"></a>切片给新字符串赋值</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">b=a[:]</span><br><span class="line"><span class="built_in">print</span>(id(a),id(b))</span><br><span class="line">2211336222064 2211336222064</span><br><span class="line">当对字符串进行切片赋值时，两者指向同一地址。</span><br></pre></td></tr></table></figure>
-<h2 id="列表"><a href="#列表" class="headerlink" title="列表"></a>列表</h2><h3 id="给新列表赋值"><a href="#给新列表赋值" class="headerlink" title="给新列表赋值"></a>给新列表赋值</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">a=[1,2,3]</span><br><span class="line">b=[1,2,3]</span><br><span class="line">a,b内存地址不同</span><br><span class="line">l1 = [1,2,3,4,5]</span><br><span class="line">l1 = l2</span><br><span class="line">del l1</span><br><span class="line">l1，l2内存地址相同，l1通过赋值给l2，他们相当于两条线拉着一个地址块，指向了相同的内存区域，del 相当于将l1的线剪掉，l1不再存在；但l2不受影响，l2=[1,2,3,4,5]</span><br></pre></td></tr></table></figure>
-<h3 id="切片生成新列表"><a href="#切片生成新列表" class="headerlink" title="切片生成新列表"></a>切片生成新列表</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">l1 = [1,2,3,4,5]</span><br><span class="line">l2 = l1[:]</span><br><span class="line">del l1</span><br><span class="line">l2与l1分别指向了不同的内存区域,l1通过切片方式生成一个新的列表，此时l2与l1列表值相同，但是他们不是同一个列表，即l2与l1分别指向了不同的内存区域。del 将l1的内存彻底释放掉，l1不再存在；但l2不受影响，l2=[1,2,3,4,5]</span><br></pre></td></tr></table></figure>
+<h2 id="列表"><a href="#列表" class="headerlink" title="列表"></a>列表</h2><h3 id="给新列表赋值"><a href="#给新列表赋值" class="headerlink" title="给新列表赋值"></a>给新列表赋值</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">a=[1,2,3,1]</span><br><span class="line">b=[1,2,3,1]</span><br><span class="line">相同内容的列表地址不同，但相同数值地址相同。是给列表分出一个内存空间，列表中存储的是每一个元素的所在地址，因此，相同内容的元素地址相同，(a[0]==a[3]==b[0])==True</span><br><span class="line">l1 = [1,2,3,4,5]</span><br><span class="line">l1 = l2</span><br><span class="line">del l1</span><br><span class="line">l1，l2内存地址相同，l1通过赋值给l2，指向了相同的内存区域，del l1相当于将l1的线剪掉，l1不再存在；但l2不受影响，l2=[1,2,3,4,5];当删除其中一个列表的元素时，另一个列表随之变化。</span><br></pre></td></tr></table></figure>
+<h3 id="切片生成新列表"><a href="#切片生成新列表" class="headerlink" title="切片生成新列表"></a>切片生成新列表</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">l1 = [1,2,3,4,5]</span><br><span class="line">l2 = l1[:]</span><br><span class="line">del l1</span><br><span class="line">l2与l1分别指向了不同的内存区域,l1通过切片方式生成一个新的列表，此时l2与l1列表值相同，但是他们不是同一个列表，即l2与l1分别指向了不同的内存区域。</span><br><span class="line">del l1将l1的内存彻底释放掉，l1不再存在；但l2不受影响，l2=[1,2,3,4,5];</span><br><span class="line">删除其中一个列表的元素，另外一个列表不随之变化。</span><br></pre></td></tr></table></figure>
 <h3 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h3><p>浮点型，字符串中存在空格时，列表（分别赋给相同内容），以及切片生成的列表<br>！！！！！！！！！！！指向的内存地址不同！！！！！！！！<br>其他的情况均相同。<br>当用“=”赋值时，地址均相同，删除其中一个不影响另一个。</p>
 <h2 id="copy-浅拷贝-和-copy-deepcopy-深拷贝"><a href="#copy-浅拷贝-和-copy-deepcopy-深拷贝" class="headerlink" title="copy() 浅拷贝 和  copy.deepcopy()深拷贝"></a>copy() 浅拷贝 和  copy.deepcopy()深拷贝</h2><p>基本数据类型中无该函数，组合数据类型中有该函数。<br>1，copy() 浅拷贝（针对最外层单独改变原列表的值）<br>将列表中的元素进行复制，通常将普通的列表能够实现完全的值传递，即将本身的副本<br>对每一个元素进行值拷贝，改变元素的值时，两个列表的值不同时改变，列表本身不相关<br>当原列表中存在了子列表，传递出的是子列表在内存中的地址，在改变元列表中的子列表内的值时，copy出的列表中的子列表同时被改变。<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br></pre></td><td class="code"><pre><span class="line">ls1=[1,2,3]</span><br><span class="line">ls2=ls1.copy()</span><br><span class="line"><span class="built_in">print</span>(<span class="string">'初始化ls1的内容：&#123;&#125;'</span>.format(ls1))</span><br><span class="line"><span class="built_in">print</span>(<span class="string">'初始化ls2的内容：&#123;&#125;'</span>.format(ls2))</span><br><span class="line">ls1[2]=6</span><br><span class="line"><span class="built_in">print</span>(<span class="string">'改变后ls1的内容：&#123;&#125;'</span>.format(ls1))</span><br><span class="line"><span class="built_in">print</span>(<span class="string">'改变后ls2的内容：&#123;&#125;'</span>.format(ls2))</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">ls3=[1,2,[4,5,3]]</span><br><span class="line">ls4=ls3.copy()</span><br><span class="line"><span class="built_in">print</span>(<span class="string">'初始化ls3的内容：&#123;&#125;'</span>.format(ls3))</span><br><span class="line"><span class="built_in">print</span>(<span class="string">'初始化ls4的内容：&#123;&#125;'</span>.format(ls4))</span><br><span class="line">ls3[2][0]=<span class="string">'qaq'</span></span><br><span class="line"><span class="built_in">print</span>(<span class="string">'将ls3中的子列表中的一个内容改变后ls3的内容：&#123;&#125;'</span>.format(ls3))</span><br><span class="line"><span class="built_in">print</span>(<span class="string">'将ls3中的子列表中的一个内容改变后ls4的内容：&#123;&#125;'</span>.format(ls4))</span><br><span class="line">ls3[2]=<span class="string">'qaq'</span></span><br><span class="line"><span class="built_in">print</span>(<span class="string">'将ls3中的列表整体改变后ls3的内容：&#123;&#125;'</span>.format(ls3))</span><br><span class="line"><span class="built_in">print</span>(<span class="string">'将ls3中的列表整体改变后ls4的内容：&#123;&#125;'</span>.format(ls4))</span><br><span class="line"></span><br><span class="line">输出结果如下：</span><br><span class="line">初始化ls1的内容：[1, 2, 3]</span><br><span class="line">初始化ls2的内容：[1, 2, 3]</span><br><span class="line">改变后ls1的内容：[1, 2, 6]</span><br><span class="line">改变后ls2的内容：[1, 2, 3]</span><br><span class="line">初始化ls3的内容：[1, 2, [4, 5, 3]]</span><br><span class="line">初始化ls4的内容：[1, 2, [4, 5, 3]]</span><br><span class="line">将ls3中的子列表中的一个内容改变后ls3的内容：[1, 2, [<span class="string">'qaq'</span>, 5, 3]]</span><br><span class="line">将ls3中的子列表中的一个内容改变后ls4的内容：[1, 2, [<span class="string">'qaq'</span>, 5, 3]]</span><br><span class="line">将ls3中的列表整体改变后ls3的内容：[1, 2, <span class="string">'qaq'</span>]</span><br><span class="line">将ls3中的列表整体改变后ls4的内容：[1, 2, [<span class="string">'qaq'</span>, 5, 3]]</span><br></pre></td></tr></table></figure></p>
 <p>2，import copy<br>copy.deepcopy()   深拷贝（针对列表中任何元素单独改变原列表的值）<br>对每一个元素进行值拷贝，改变其中原列表的值时，包括子列表中的内容也可被改变<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line">import copy <span class="comment">#导入copy包</span></span><br><span class="line">ls3=[1,2,[4,5,3]]</span><br><span class="line">ls4=copy.deepcopy(ls3)</span><br><span class="line"><span class="built_in">print</span>(<span class="string">'初始化ls3的内容：&#123;&#125;'</span>.format(ls3))</span><br><span class="line"><span class="built_in">print</span>(<span class="string">'初始化ls4的内容：&#123;&#125;'</span>.format(ls4))</span><br><span class="line">ls3[2][0]=<span class="string">'qaq'</span></span><br><span class="line"><span class="built_in">print</span>(<span class="string">'将ls3中的子列表中的一个内容改变后ls3的内容：&#123;&#125;'</span>.format(ls3))</span><br><span class="line"><span class="built_in">print</span>(<span class="string">'将ls3中的子列表中的一个内容改变后ls4的内容：&#123;&#125;'</span>.format(ls4))</span><br><span class="line">ls3[2]=<span class="string">'qaq'</span></span><br><span class="line"><span class="built_in">print</span>(<span class="string">'将ls3中的列表整体改变后ls3的内容：&#123;&#125;'</span>.format(ls3))</span><br><span class="line"><span class="built_in">print</span>(<span class="string">'将ls3中的列表整体改变后ls4的内容：&#123;&#125;'</span>.format(ls4))</span><br><span class="line"></span><br><span class="line">输出结果如下：</span><br><span class="line">初始化ls3的内容：[1, 2, [4, 5, 3]]</span><br><span class="line">初始化ls4的内容：[1, 2, [4, 5, 3]]</span><br><span class="line">将ls3中的子列表中的一个内容改变后ls3的内容：[1, 2, [<span class="string">'qaq'</span>, 5, 3]]</span><br><span class="line">将ls3中的子列表中的一个内容改变后ls4的内容：[1, 2, [4, 5, 3]]</span><br><span class="line">将ls3中的列表整体改变后ls3的内容：[1, 2, <span class="string">'qaq'</span>]</span><br><span class="line">将ls3中的列表整体改变后ls4的内容：[1, 2, [4, 5, 3]]</span><br></pre></td></tr></table></figure></p>
@@ -658,19 +705,19 @@
 
 
   
-    <article id="post-fourth" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+    <article id="post-04" class="article article-type-post  article-index" itemscope itemprop="blogPost">
   <div class="article-inner">
     
       <header class="article-header">
         
   
     <h1 itemprop="name">
-      <a class="article-title" href="/2018/07/15/fourth/">Python基础语法——基本数据类型</a>
+      <a class="article-title" href="/2018/07/15/04/">Python基础语法——基本数据类型</a>
     </h1>
   
 
         
-        <a href="/2018/07/15/fourth/" class="archive-article-date">
+        <a href="/2018/07/15/04/" class="archive-article-date">
   	<time datetime="2018-07-15T15:11:09.236Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-07-15</time>
 </a>
         
@@ -724,7 +771,7 @@
 
       
         <p class="article-more-link">
-          <a class="article-more-a" href="/2018/07/15/fourth/">展开全文 >></a>
+          <a class="article-more-a" href="/2018/07/15/04/">展开全文 >></a>
         </p>
       
 
@@ -754,19 +801,19 @@
 
 
   
-    <article id="post-first" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+    <article id="post-01" class="article article-type-post  article-index" itemscope itemprop="blogPost">
   <div class="article-inner">
     
       <header class="article-header">
         
   
     <h1 itemprop="name">
-      <a class="article-title" href="/2018/07/14/first/">Python基础语法——编码；执行Python代码方式；print()函数；变量</a>
+      <a class="article-title" href="/2018/07/14/01/">Python基础语法——编码；执行Python代码方式；print()函数；变量</a>
     </h1>
   
 
         
-        <a href="/2018/07/14/first/" class="archive-article-date">
+        <a href="/2018/07/14/01/" class="archive-article-date">
   	<time datetime="2018-07-14T01:48:20.507Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-07-14</time>
 </a>
         
@@ -804,75 +851,7 @@
 
       
         <p class="article-more-link">
-          <a class="article-more-a" href="/2018/07/14/first/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
-    <article id="post-second" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2018/07/14/second/">Python基础语法——控制语句，逻辑运算符</a>
-    </h1>
-  
-
-        
-        <a href="/2018/07/14/second/" class="archive-article-date">
-  	<time datetime="2018-07-14T01:48:17.025Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-07-14</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h2 id="基础语法"><a href="#基础语法" class="headerlink" title="基础语法"></a>基础语法</h2><h3 id="条件语句"><a href="#条件语句" class="headerlink" title="条件语句"></a>条件语句</h3><h3 id="if条件语句"><a href="#if条件语句" class="headerlink" title="if条件语句"></a>if条件语句</h3><p>单判断：<br>if 条件:<br>   代码</p>
-<p>双分支：<br>if 条件：<br>   代码<br>else:<br>   代码</p>
-<p>多分支：<br>if 条件：<br>   代码<br>elif 条件：<br>   代码<br>elif 条件：<br>   代码<br>…<br>else:<br>   代码</p>
-<h3 id="循环控制语句"><a href="#循环控制语句" class="headerlink" title="循环控制语句"></a>循环控制语句</h3><h3 id="for循环"><a href="#for循环" class="headerlink" title="for循环"></a>for循环</h3><p>for循环<br>第一种：（Python推荐）<br>for 变量 in 集合：<br>    代码<br>说明：这种循环方式，我们称为快速迭代循环，能够对集合数据进行遍历。<br>注意：这种方式只能用在集合数据上，比如：字符串、列表、元组、字典等内容。<br>例如：<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">string1 = <span class="string">'hello world'</span></span><br><span class="line"><span class="keyword">for</span> item <span class="keyword">in</span> string1:</span><br><span class="line">	<span class="built_in">print</span>(item,end=<span class="string">''</span>)</span><br><span class="line">hello world</span><br></pre></td></tr></table></figure></p>
-<p>第二种：传统式，配合range()函数使用。通过range()函数指定了循环的范围。<br>for i range(循环次数):<br>    代码<br>说明：这种循环方式，采用指定循环次数，对目标集合进行遍历。其做法主要是让循环与集合的下标同步，在循环次数时一同取出集合指定下标的对应值。<br>range()函数：<br>函数格式：<br>range(stop) :缺省情况下，表示从0开始，循环n次<br>range(star,stop[,step])<br>其中，star：循环开始的值，stop：循环次数，step：循环步长。注意此处循环，会根据stop中的值循环规定的次数，但是显示时会从start位置开始。<br>例如：<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">for</span> i <span class="keyword">in</span> range(3,10):</span><br><span class="line">	<span class="built_in">print</span>(i,end=<span class="string">' '</span>)</span><br><span class="line">3 4 5 6 7 8 9 </span><br><span class="line"><span class="keyword">for</span> i <span class="keyword">in</span> range(5,10):</span><br><span class="line">	<span class="built_in">print</span>(i,end=<span class="string">' '</span>)</span><br><span class="line">5 6 7 8 9</span><br></pre></td></tr></table></figure></p>
-<p>for循环的常用方式：嵌套<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">for</span> i <span class="keyword">in</span> range(次数):</span><br><span class="line">    <span class="keyword">for</span> j <span class="keyword">in</span> range(次数):</span><br><span class="line">```    </span><br><span class="line">注意：在这种嵌套表示的过程中，变量的位置尤为重要，通用原则为：如果变量的值需要通过外层循环来获取或生成，那么我们可以将其设为全局变量，即与外层循环<span class="keyword">for</span>同等级的变量，如果变量需要在内层循环中生成或获取，我们通常会在外循环中声明，即与内循环同级。</span><br><span class="line"><span class="comment">### while语句</span></span><br><span class="line">格式：<span class="keyword">while</span> 条件：</span><br><span class="line">           代码</span><br><span class="line"><span class="comment">### break and continue</span></span><br><span class="line"><span class="built_in">break</span>：当满足指定条件时，<span class="built_in">break</span>表示中断（中止）此循环，如果循环外部还有其他代码则继续向下执行。</span><br><span class="line"><span class="built_in">continue</span>：当满足指定条件时，<span class="built_in">continue</span>表示结束本次循环，开始下一次循环。注意<span class="built_in">continue</span>并没有退出循环。</span><br><span class="line">同时，这两个关键字都是必须配合循环语句来使用，不能单独用在其他地方，比如：<span class="keyword">if</span></span><br><span class="line"><span class="comment">### 逻辑运算符： and、or、not</span></span><br><span class="line">and:左右两端都是布尔型，其结果也为布尔型。当左右两端的值都为True，其结果才为True，有一方为False，其结果一定为False。</span><br><span class="line">or:左右两端都是布尔型，其结果也为布尔型。当左右两端的值有一方为True时，其结果就为True，只有在双方都为False时，其结果才为False。</span><br><span class="line">not：属于单目运算，其结果也是布尔型。其作用就是求反，如果变量为True，结果为False，如果为False，其结果为True。</span><br><span class="line">逻辑运算、比较运算常用在条件中使用。同时，这两种运算符经常配合使用。</span><br><span class="line">```bash</span><br><span class="line">在python中，我们认为变量如果被赋值后，使用not运算后，会得False。如果一个变量没有被赋值或设为空值，那么进行not运算时，返回True。比如：</span><br><span class="line">a = 10</span><br><span class="line">not a =&gt; False</span><br><span class="line">a = None (None代表了空值)</span><br><span class="line">not a =&gt; True</span><br><span class="line">list1 = list() 此时列表没有被赋值，为空列表</span><br><span class="line">not list1 =&gt; True</span><br><span class="line">list1.append(1,2,3)  此时列表进行赋值</span><br><span class="line">not list1 =&gt; False</span><br></pre></td></tr></table></figure></p>
-
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2018/07/14/second/">展开全文 >></a>
+          <a class="article-more-a" href="/2018/07/14/01/">展开全文 >></a>
         </p>
       
 
