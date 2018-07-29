@@ -1,25 +1,25 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <meta charset="utf_8">
+  <meta charset="UTF-8">
   
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
   <link rel="dns-prefetch" href="http://yoursite.com">
-  <title>Python基础语法——闭包 | Mango滴博客</title>
+  <title>Python基础语法——嵌套，闭包，装饰器 | Mango滴博客</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="5、函数嵌套根据Python中，对函数的载入和调用特点。我们可以清楚看到，当Python运行相关文件时，如果遇到函数时，会先将其名字载入到内存中（即为函数名指定一个内存地址）。因此我们在使用函数名时，可以有以下三种情况：1）将函数名赋值给变量例如：def f1():   print(‘ok’) a = f1这是变量a中的值就是f1()函数名的内存地址。2）将函数名作为容器的元素def f1():">
+  <meta name="description" content="函数嵌套根据Python中，对函数的载入和调用特点。我们可以清楚看到，当Python运行相关文件时，如果遇到函数时，会先将其名字载入到内存中（即为函数名指定一个内存地址）。因此我们在使用函数名时，可以有以下三种情况：123456789101112131415161718192021222324251）将函数名赋值给变量例如：def f1():   print(&apos;ok&apos;)a = f1这是变量a中的值">
 <meta name="keywords" content="Python、Web开发">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Python基础语法——闭包">
+<meta property="og:title" content="Python基础语法——嵌套，闭包，装饰器">
 <meta property="og:url" content="http://yoursite.com/2018/07/28/11/index.html">
 <meta property="og:site_name" content="Mango滴博客">
-<meta property="og:description" content="5、函数嵌套根据Python中，对函数的载入和调用特点。我们可以清楚看到，当Python运行相关文件时，如果遇到函数时，会先将其名字载入到内存中（即为函数名指定一个内存地址）。因此我们在使用函数名时，可以有以下三种情况：1）将函数名赋值给变量例如：def f1():   print(‘ok’) a = f1这是变量a中的值就是f1()函数名的内存地址。2）将函数名作为容器的元素def f1():">
+<meta property="og:description" content="函数嵌套根据Python中，对函数的载入和调用特点。我们可以清楚看到，当Python运行相关文件时，如果遇到函数时，会先将其名字载入到内存中（即为函数名指定一个内存地址）。因此我们在使用函数名时，可以有以下三种情况：123456789101112131415161718192021222324251）将函数名赋值给变量例如：def f1():   print(&apos;ok&apos;)a = f1这是变量a中的值">
 <meta property="og:locale" content="default">
-<meta property="og:updated_time" content="2018-07-28T13:45:47.135Z">
+<meta property="og:updated_time" content="2018-07-29T07:03:52.124Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Python基础语法——闭包">
-<meta name="twitter:description" content="5、函数嵌套根据Python中，对函数的载入和调用特点。我们可以清楚看到，当Python运行相关文件时，如果遇到函数时，会先将其名字载入到内存中（即为函数名指定一个内存地址）。因此我们在使用函数名时，可以有以下三种情况：1）将函数名赋值给变量例如：def f1():   print(‘ok’) a = f1这是变量a中的值就是f1()函数名的内存地址。2）将函数名作为容器的元素def f1():">
+<meta name="twitter:title" content="Python基础语法——嵌套，闭包，装饰器">
+<meta name="twitter:description" content="函数嵌套根据Python中，对函数的载入和调用特点。我们可以清楚看到，当Python运行相关文件时，如果遇到函数时，会先将其名字载入到内存中（即为函数名指定一个内存地址）。因此我们在使用函数名时，可以有以下三种情况：123456789101112131415161718192021222324251）将函数名赋值给变量例如：def f1():   print(&apos;ok&apos;)a = f1这是变量a中的值">
   
     <link rel="alternative" href="/atom.xml" title="Mango滴博客" type="application/atom+xml">
   
@@ -164,7 +164,7 @@
         
   
     <h1 class="article-title" itemprop="name">
-      Python基础语法——闭包
+      Python基础语法——嵌套，闭包，装饰器
     </h1>
   
 
@@ -177,16 +177,10 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <p>5、函数嵌套<br>根据Python中，对函数的载入和调用特点。我们可以清楚看到，当Python运行相关文件时，如果遇到函数时，会先将其名字载入到内存中（即为函数名指定一个内存地址）。因此我们在使用函数名时，可以有以下三种情况：<br>1）将函数名赋值给变量<br>例如：<br>def f1():<br>   print(‘ok’)</p>
-<p>a = f1<br>这是变量a中的值就是f1()函数名的内存地址。<br>2）将函数名作为容器的元素<br>def f1():<br>   print(‘ok’)<br>ls = [1,2,f1]<br>注意，此时存入到列表ls中的f1，它的值仍然是该函数名对应的内存地址<br>3）将函数名作为另外一个函数的参数，进行传递<br>def f1():<br>   print(‘ok’)</p>
-<p>def f2(x):<br>   x()<br>f2(f1)<br>其执行结果为OK，这种方式类似与函数的普通嵌套,代码如下：<br>def f2():<br>   def f1():<br>      print(‘ok’)<br>   f1()<br>f2()</p>
-<p>6、闭包<br>1）闭包格式</p>
-<p>def outer():<br>    print(‘我是外部函数’)<br>    def inner():<br>        print(‘我是闭包函数’)<br>    return inner</p>
-<p>f = outer()<br>f()<br>通过对例子的观察，我们发现闭包函数的写法有如下特点：<br>1、闭包函数作为内部函数，嵌套在外部函数中<br>2、闭包函数会作为外部函数的返回值，进行返回。返回闭包函数时，只返回函数名，不带括号。<br>3、外部调用时，首先要执行外部函数，然后将结果赋值给一个变量，此时该变量对应了闭包函数。<br>4、我们可以通过<strong>closure</strong>内部函数可以观察到，闭包函数的存在。前提是，闭包函数要与外部函数进行数据传递或调用。<br>总结：闭包使用的数据，必须是本身定义或外部函数中定义的相关变量，通常需要调用外部函数的数据，形成一个封闭的函数结构。不能与外部数据（全局变量）发生交流。<br>2）闭包的应用—装饰器<br>1、概念：装饰器本身仍然是一个函数。是我们队闭包应用的一种具体实现。<br>2、作用：装饰器可以在不改变函数本身功能的情况下，为函数添加额外的功能。诸如：日志、测试、性能检测等。装饰器同样也是返回一个函数对象。<br>3、用法：<br>使用格式：@+装饰器名称</p>
-<p>import time</p>
-<p>def outer(f):<br>    def inner(<em>var):<br>        start_time = time.time()<br>        f(</em>var)<br>        time.sleep(0.3)<br>        end_time = time.time()<br>        print(‘此函数执行时间为{0}’.format(str(end_time-start_time)))<br>    return inner</p>
-<p>@outer      # 此处就是装饰器的声明，这种方法我们成为语法糖<br>def func1():<br>    print(‘hello world’)</p>
-<p>7、高阶函数<br>1）匿名函数<br>使用lambda关键字进行修饰，没有显式声明函数的名字。格式如下：<br>lambda 参数：表达式（返回值）<br>注意，在使用匿名函数时，因为其自身的情况限制，匿名函数并不能执行比较复杂的业务逻辑，即函数内的代码不能过多。lambda本身是一个表达式</p>
+        <h3 id="函数嵌套"><a href="#函数嵌套" class="headerlink" title="函数嵌套"></a>函数嵌套</h3><p>根据Python中，对函数的载入和调用特点。我们可以清楚看到，当Python运行相关文件时，如果遇到函数时，会先将其名字载入到内存中（即为函数名指定一个内存地址）。因此我们在使用函数名时，可以有以下三种情况：<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br></pre></td><td class="code"><pre><span class="line">1）将函数名赋值给变量</span><br><span class="line">例如：</span><br><span class="line">def f1():</span><br><span class="line">   <span class="built_in">print</span>(<span class="string">'ok'</span>)</span><br><span class="line"></span><br><span class="line">a = f1</span><br><span class="line">这是变量a中的值就是f1()函数名的内存地址。</span><br><span class="line">2）将函数名作为容器的元素</span><br><span class="line">def f1():</span><br><span class="line">   <span class="built_in">print</span>(<span class="string">'ok'</span>)</span><br><span class="line">ls = [1,2,f1]</span><br><span class="line">注意，此时存入到列表ls中的f1，它的值仍然是该函数名对应的内存地址</span><br><span class="line">3）将函数名作为另外一个函数的参数，进行传递</span><br><span class="line">def f1():</span><br><span class="line">   <span class="built_in">print</span>(<span class="string">'ok'</span>)</span><br><span class="line"></span><br><span class="line">def f2(x):</span><br><span class="line">   x()</span><br><span class="line">f2(f1)</span><br><span class="line">其执行结果为OK，这种方式类似与函数的普通嵌套,代码如下：</span><br><span class="line">def f2():</span><br><span class="line">   def f1():</span><br><span class="line">      <span class="built_in">print</span>(<span class="string">'ok'</span>)</span><br><span class="line">   f1()</span><br><span class="line">f2()</span><br></pre></td></tr></table></figure></p>
+<h3 id="闭包"><a href="#闭包" class="headerlink" title="闭包"></a>闭包</h3><h4 id="闭包格式"><a href="#闭包格式" class="headerlink" title="闭包格式"></a>闭包格式</h4><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">def outer():</span><br><span class="line">    <span class="built_in">print</span>(<span class="string">'我是外部函数'</span>)</span><br><span class="line">    def inner():</span><br><span class="line">        <span class="built_in">print</span>(<span class="string">'我是闭包函数'</span>)</span><br><span class="line">    <span class="built_in">return</span> inner</span><br><span class="line">f = outer()</span><br><span class="line">f()</span><br></pre></td></tr></table></figure>
+<p>通过对例子的观察，我们发现闭包函数的写法有如下特点：<br>1、闭包函数作为内部函数，嵌套在外部函数中<br>2、闭包函数会作为外部函数的返回值，进行返回。返回闭包函数时，只返回函数名，不带括号。<br>3、外部调用时，首先要执行外部函数，然后将结果赋值给一个变量，此时该变量对应了闭包函数。<br>4、我们可以通过<strong>closure</strong>内部函数可以观察到，闭包函数的存在。前提是，闭包函数要与外部函数进行数据传递或调用。<br>总结：闭包使用的数据，必须是本身定义或外部函数中定义的相关变量，通常需要调用外部函数的数据，形成一个封闭的函数结构。不能与外部数据（全局变量）发生交流。</p>
+<h4 id="闭包的应用—装饰器"><a href="#闭包的应用—装饰器" class="headerlink" title="闭包的应用—装饰器"></a>闭包的应用—装饰器</h4><p>1、概念：装饰器本身仍然是一个函数。是我们队闭包应用的一种具体实现。<br>2、作用：装饰器可以在不改变函数本身功能的情况下，为函数添加额外的功能。诸如：日志、测试、性能检测等。装饰器同样也是返回一个函数对象。<br>3、用法：<br>使用格式：@+装饰器名称<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">import time</span><br><span class="line">def outer(f):</span><br><span class="line">    def inner(*var):</span><br><span class="line">        start_time = time.time()</span><br><span class="line">        f(*var)</span><br><span class="line">        time.sleep(0.3)</span><br><span class="line">        end_time = time.time()</span><br><span class="line">        <span class="built_in">print</span>(<span class="string">'此函数执行时间为&#123;0&#125;'</span>.format(str(end_time-start_time)))</span><br><span class="line">    <span class="built_in">return</span> inner</span><br><span class="line">@outer      <span class="comment"># 此处就是装饰器的声明，这种方法我们成为语法糖</span></span><br><span class="line">def func1():</span><br><span class="line">    <span class="built_in">print</span>(<span class="string">'hello world'</span>)</span><br></pre></td></tr></table></figure></p>
 
       
 
@@ -284,14 +278,14 @@
       <i class="icon-circle-left"></i>
       <div class="article-nav-title">
         
-          Python基础语法——文件
+          Python基础语法——文件的输入输出
         
       </div>
     </a>
   
   
     <a href="/2018/07/24/10/" id="article-nav-older" class="article-nav-link-wrap">
-      <div class="article-nav-title"></div>
+      <div class="article-nav-title">Python基础语法——局部变量与全局变量</div>
       <i class="icon-circle-right"></i>
     </a>
   

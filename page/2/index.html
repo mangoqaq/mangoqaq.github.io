@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <meta charset="utf_8">
+  <meta charset="UTF-8">
   
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
@@ -154,6 +154,156 @@
           </div>
           <div id="js-content" class="content-ll">
             
+  
+    <article id="post-05" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2018/07/17/05/">Python基础语法——组合数据类型之字典</a>
+    </h1>
+  
+
+        
+        <a href="/2018/07/17/05/" class="archive-article-date">
+  	<time datetime="2018-07-17T13:29:23.713Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-07-17</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h2 id="字典数据类型"><a href="#字典数据类型" class="headerlink" title="字典数据类型"></a>字典数据类型</h2><h3 id="字典类型的基本概念"><a href="#字典类型的基本概念" class="headerlink" title="字典类型的基本概念"></a>字典类型的基本概念</h3><p>字典是python中唯一的映射类型，采用键值对(key-value)的形式存储数据。也就是说字典类型中的每个元素都是有两部分构成，中间使用：连接。其中，key和value的可以是任意数据类型的内容。python对key进行哈希函数运算，根据计算的结果决定value的存储地址，所以字典是无序存储的，且key必须是可哈希的。</p>
+<h3 id="字典对象的生成"><a href="#字典对象的生成" class="headerlink" title="字典对象的生成"></a>字典对象的生成</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">1、dic = &#123;1:<span class="string">'one'</span>,2:<span class="string">'two'</span>,3:<span class="string">'three'</span>&#125;，两边使用一对&#123;&#125;来界定。</span><br><span class="line">2、dic = dict() 生成一个空字典。</span><br><span class="line">3、dic = dict(&#123;1:<span class="string">'one'</span>,2:<span class="string">'two'</span>,3:<span class="string">'three'</span>&#125;)</span><br><span class="line">d1=&#123;<span class="string">"id"</span>:19,<span class="string">"name"</span>:<span class="string">"Marry"</span>,<span class="string">"city"</span>:<span class="string">"chongqing"</span>&#125;</span><br><span class="line">d2=dict(&#123;<span class="string">"id"</span>:19,<span class="string">"name"</span>:<span class="string">"Marry"</span>,<span class="string">"city"</span>:<span class="string">"chongqing"</span>&#125;)</span><br><span class="line">d3=dict(id=19,name=<span class="string">"Marry"</span>,city=<span class="string">"chongqing"</span>)</span><br><span class="line">d4=dict([(<span class="string">"id"</span>,19),(<span class="string">"nmae"</span>,<span class="string">"Marry"</span>),(<span class="string">"city"</span>,<span class="string">"chongqing"</span>)])</span><br><span class="line">d5=dict(zip((<span class="string">"id"</span>,<span class="string">"name"</span>,<span class="string">"city"</span>),(19,<span class="string">"Marry"</span>,<span class="string">"chongqing"</span>)))</span><br><span class="line">d6=dict(zip([<span class="string">"id"</span>,<span class="string">"name"</span>,<span class="string">"city"</span>],[19,<span class="string">"Marry"</span>,<span class="string">"chongqing"</span>]))</span><br></pre></td></tr></table></figure>
+<p>注意：字典中的key是唯一的，如果在生成时命名了多个同名的key，那么实际上字典会使用最后一次命名的key来覆盖前面的同名内容。<br>同时，字典在赋值时，允许其value或key为空。</p>
+<p>使用zip()函数生成字典<br>函数格式：zip(iter1,iter2,….)<br>返回值：返回一个zip对象<br>我们通过zip函数，指定对应的元组，分别来作为字典的key和 value，生成zip对象转成字典数据。<br>例如：<br>dict(zip((‘id’,’name’,’city’),(1,’hhp’,’zhengzhou’)))</p>
+<h3 id="字典的特性"><a href="#字典的特性" class="headerlink" title="字典的特性"></a>字典的特性</h3><p>首先、字典中的元素是根据每对键值对中的key来决定的，通过相应的哈希算法来决定他们对应的value的存储地址，因此字典时无序的。<br>其次，字典中的key，可以是数值、字符串、元组等构成，注意这些内容都是不可改变的。同时，字典中的key都是唯一的。<br>然后，字典中的value需用通过key来获取。</p>
+<h3 id="字典的常用操作"><a href="#字典的常用操作" class="headerlink" title="字典的常用操作"></a>字典的常用操作</h3><h4 id="字典的新增和修改"><a href="#字典的新增和修改" class="headerlink" title="字典的新增和修改"></a>字典的新增和修改</h4><p>如果字典中不存在指定的key，则对该字典实现元素的新增<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">dic = &#123;1:<span class="string">'one'</span>,2:<span class="string">'two'</span>,3:<span class="string">'three'</span>&#125;</span><br><span class="line">dic[4] = <span class="string">'four'</span></span><br><span class="line">&#123;1: <span class="string">'one'</span>, 2: <span class="string">'two'</span>, 3: <span class="string">'three'</span>, 4: <span class="string">'four'</span>&#125;</span><br></pre></td></tr></table></figure></p>
+<p>如果字典中存在指定的key，那么对key对应的value进行修改<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">&#123;1: <span class="string">'one'</span>, 2: <span class="string">'two'</span>, 3: <span class="string">'three'</span>, 4: <span class="string">'four'</span>, 5: <span class="string">'fiv'</span>&#125;</span><br><span class="line">dic[5] = <span class="string">'five'</span></span><br><span class="line">&#123;1: <span class="string">'one'</span>, 2: <span class="string">'two'</span>, 3: <span class="string">'three'</span>, 4: <span class="string">'four'</span>, 5: <span class="string">'five'</span>&#125;</span><br></pre></td></tr></table></figure></p>
+<h4 id="字典的删除"><a href="#字典的删除" class="headerlink" title="字典的删除"></a>字典的删除</h4><p>1，使用del进行字典内容的删除<br>del dic[key]    删除指定可以对应的value内容<br>del dic         删除整个字典，并释放其所占内存<br>2，使用pop()函数，删除指定key对应的value内容<br>函数格式：dict.pop(key)  ，其中参数为字典中的key值<br>返回值：返回所删除key对应的value内容<br>3，使用clear()函数，清空字典中所有内容<br>函数格式：dict.clear()<br>返回值：清空字典内容，返回一个空字典<br>4,popitem()，删除字典尾部中的键值对<br>函数格式：dict.popitem()<br>返回值：会在字典尾部，弹出键值对并删除，将删除的键值对按照元组类型返回</p>
+<h4 id="检索字典"><a href="#检索字典" class="headerlink" title="检索字典"></a>检索字典</h4><p>1、查询指定的value,通过指定的key找到对应的value<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">dic[1] = &gt; <span class="string">'one'</span></span><br></pre></td></tr></table></figure></p>
+<p>2、遍历字典<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">for</span> key <span class="keyword">in</span> dic:</span><br><span class="line">    dic[key]</span><br><span class="line"><span class="string">'one'</span></span><br><span class="line"><span class="string">'two'</span></span><br><span class="line"><span class="string">'three'</span></span><br><span class="line"><span class="string">'four'</span></span><br><span class="line"><span class="string">'five</span></span><br></pre></td></tr></table></figure></p>
+<h4 id="字典与列表、元组的转换"><a href="#字典与列表、元组的转换" class="headerlink" title="字典与列表、元组的转换"></a>字典与列表、元组的转换</h4><h5 id="列表转成字典"><a href="#列表转成字典" class="headerlink" title="列表转成字典"></a>列表转成字典</h5><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">list1 = [[1,<span class="string">'one'</span>],[2,<span class="string">'two'</span>],[3,<span class="string">'three'</span>]]</span><br><span class="line">或</span><br><span class="line">list1 = [(1,<span class="string">'one'</span>),(2,<span class="string">'two'</span>),(3,<span class="string">'three'</span>)]</span><br><span class="line">dic = dict(list1)</span><br><span class="line">&#123;1: <span class="string">'one'</span>, 2: <span class="string">'two'</span>, 3: <span class="string">'three'</span>&#125;</span><br></pre></td></tr></table></figure>
+<h5 id="元组转成字典"><a href="#元组转成字典" class="headerlink" title="元组转成字典"></a>元组转成字典</h5><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">tup = ((1,<span class="string">'one'</span>),(2,<span class="string">'two'</span>),(3,<span class="string">'three'</span>))</span><br><span class="line">dic = dict(tup)</span><br><span class="line">&#123;1: <span class="string">'one'</span>, 2: <span class="string">'two'</span>, 3: <span class="string">'three'</span>&#125;</span><br></pre></td></tr></table></figure>
+<p>注意：不管是元组还是列表，其作为key的那个值必须是不可变数据类型。<br>同时，我们对字典进行新增和修改时，其key可以使用True或False，但是要注意在使用他们时字典会首先对已有的key进行比对，如果有重复的则进行修改（True==1，False==0）</p>
+<h4 id="常用函数"><a href="#常用函数" class="headerlink" title="常用函数"></a>常用函数</h4><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br></pre></td><td class="code"><pre><span class="line">1、keys(),获得字典所有的key值集合</span><br><span class="line">函数格式：dict.keys()</span><br><span class="line">返回值：dict_keys 类型，实际内容为一个list列表。</span><br><span class="line">dic = &#123;1:<span class="string">'one'</span>,2:<span class="string">'two'</span>,3:<span class="string">'three'</span>&#125;</span><br><span class="line"><span class="keyword">for</span> key <span class="keyword">in</span> dic.keys():</span><br><span class="line">     <span class="built_in">print</span>(key,dic[key]) </span><br><span class="line">dic.keys()</span><br><span class="line">返回结果：dict_keys([1, 2, 3])</span><br><span class="line"></span><br><span class="line">2、values(),获得字典中所有的value值的集合</span><br><span class="line">函数格式：dict.values()</span><br><span class="line">返回值：dict_values类型，实际内容为一个list列表</span><br><span class="line">dic.values()</span><br><span class="line">返回结果：dict_values([<span class="string">'one'</span>, <span class="string">'two'</span>, <span class="string">'three'</span>])</span><br><span class="line">3、items(),获得字典中所有key=value键值对的集合</span><br><span class="line">函数格式：dict.items()</span><br><span class="line">返回值：dict_items类型，实际内容为一个包含元组的list列表</span><br><span class="line">dic = &#123;1:<span class="string">'one'</span>,2:<span class="string">'two'</span>,3:<span class="string">'three'</span>&#125;</span><br><span class="line">dic.items()</span><br><span class="line">结果为：dict_items([(1, <span class="string">'one'</span>), (2, <span class="string">'two'</span>), (3, <span class="string">'three'</span>)])</span><br><span class="line">4、get()，获得字典中指定key对应的value内容</span><br><span class="line">函数格式：dict.get(key)</span><br><span class="line">返回值：返回指定key对应的value，如果没有找到则不返回任何内容即返回None。例如：</span><br><span class="line">dic.get(5) == None	   </span><br><span class="line">True</span><br><span class="line">5、setdefault()，返回指定key对应的内容，如果这个key不存在，那么就进行新增</span><br><span class="line">函数格式：dict.setdefault(key[,value]),其中key为键值，如果该key在字典中已经存在，那么不需要填写value参数；如果key值在字典中不存在，需要value参数。</span><br><span class="line">返回值：如果key值存在，返回该key对应的value内容；如果key不存在，则进行新增返回新增的value内容。</span><br><span class="line">6、update(),将新字典中的key=value内容，添加到原有字典尾部，如果新字典内容中有key值与原字典的key值相同，那么就覆盖key值对应的原有value。</span><br><span class="line">函数格式：old_dict.update(new_dict)</span><br><span class="line">返回值：将新字典中的内容，添加到原有字典的尾部。</span><br><span class="line">dic = &#123;1:<span class="string">'麻辣米线'</span>,2:<span class="string">'麻辣烫'</span>,3:<span class="string">'凉皮'</span>,4:<span class="string">'刀削面'</span>,5:<span class="string">'兰州拉面'</span>&#125;</span><br><span class="line">dic2 = &#123;<span class="string">'one'</span>:<span class="string">'美式咖啡'</span>,<span class="string">'two'</span>:<span class="string">'拿铁'</span>,<span class="string">'three'</span>:<span class="string">'卡布基诺'</span>,5:<span class="string">'甜甜圈'</span>&#125;</span><br><span class="line">dic.update(dic2)</span><br><span class="line">&#123;1: <span class="string">'麻辣米线'</span>, 2: <span class="string">'麻辣烫'</span>, 3: <span class="string">'凉皮'</span>, 4: <span class="string">'刀削面'</span>, 5: <span class="string">'甜甜圈'</span>, <span class="string">'one'</span>: <span class="string">'美式咖啡'</span>, <span class="string">'two'</span>: <span class="string">'拿铁'</span>, <span class="string">'three'</span>: <span class="string">'卡布基诺'</span>&#125;</span><br><span class="line">7、fromkeys(),通过指定的key集合，生成一个新字典，其value值缺省为None</span><br><span class="line">函数格式：dict.fromkeys(iter1[,value]) 其中iter1为可迭代化集合，比如：列表、元组；value可以是任意数据类型。</span><br><span class="line">返回值：返回一个新字典，其中key为我们在参数中使用的iter1集合，值都为None或者指定的value。比如：</span><br><span class="line">①</span><br><span class="line">dic3 = dict(&#123;<span class="string">'a'</span>:<span class="string">'one'</span>,<span class="string">'b'</span>:<span class="string">'two'</span>,<span class="string">'c'</span>:<span class="string">'three'</span>&#125;)</span><br><span class="line">a = dic3.fromkeys([1,2,3])</span><br><span class="line">&#123;1: None, 2: None, 3: None&#125;</span><br><span class="line">②</span><br><span class="line">dic3 = dict(&#123;<span class="string">'a'</span>:<span class="string">'one'</span>,<span class="string">'b'</span>:<span class="string">'two'</span>,<span class="string">'c'</span>:<span class="string">'three'</span>&#125;)</span><br><span class="line">a = dic3.fromkeys([1,2,3],[<span class="string">'a'</span>,<span class="string">'b'</span>,<span class="string">'c'</span>])</span><br><span class="line">&#123;1: [<span class="string">'a'</span>, <span class="string">'b'</span>, <span class="string">'c'</span>], 2: [<span class="string">'a'</span>, <span class="string">'b'</span>, <span class="string">'c'</span>], 3: [<span class="string">'a'</span>, <span class="string">'b'</span>, <span class="string">'c'</span>]&#125;</span><br></pre></td></tr></table></figure>
+<p>讨论：<br>列表的可迭代化<br>当生成一个空列表时，因为列表中没有值，所以python并没有相应的内存地址分配给这个列表变量，当该列表添加元素后，python会自动给该列表扩充内存地址，那么地址都是依次连续的在内存中进行排列。</p>
+
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+      
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2018/07/17/05/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
+  
+    <article id="post-work2" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2018/07/16/work2/">python 定义内容内存地址状况（包括浅拷贝，深拷贝）</a>
+    </h1>
+  
+
+        
+        <a href="/2018/07/16/work2/" class="archive-article-date">
+  	<time datetime="2018-07-16T13:07:45.303Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-07-16</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>因对Python各种格式的存储情况不慎了解，特此总结。</p>
+<h2 id="整型"><a href="#整型" class="headerlink" title="整型"></a>整型</h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">a=10</span><br><span class="line">b=10</span><br><span class="line">c=a</span><br><span class="line"><span class="built_in">print</span>(id(a),id(b),id(c))</span><br><span class="line">1539927344 1539927344 1539927344</span><br><span class="line">三者指向同一个地址，删除任一项时，对其他不影响。</span><br></pre></td></tr></table></figure>
+<h2 id="浮点型"><a href="#浮点型" class="headerlink" title="浮点型"></a>浮点型</h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">a=1.25</span><br><span class="line">b=1.25</span><br><span class="line">c=a</span><br><span class="line"><span class="built_in">print</span>(id(a),id(b),id(c))</span><br><span class="line">2211326073472 2211326073400 2211326073472</span><br><span class="line">a和b地址不同，a与c地址相同，删除任一项时，对其他不影响。</span><br></pre></td></tr></table></figure>
+<h2 id="布尔型"><a href="#布尔型" class="headerlink" title="布尔型"></a>布尔型</h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">a=False</span><br><span class="line">b=False</span><br><span class="line">c=a</span><br><span class="line"><span class="built_in">print</span>(id(a),id(b),id(c))</span><br><span class="line">1539436800 1539436800 1539436800</span><br><span class="line">三者指向同一个地址，删除任一项时，对其他不影响。</span><br></pre></td></tr></table></figure>
+<h2 id="字符串型"><a href="#字符串型" class="headerlink" title="字符串型"></a>字符串型</h2><h3 id="直接给字符串赋值"><a href="#直接给字符串赋值" class="headerlink" title="直接给字符串赋值"></a>直接给字符串赋值</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">a=<span class="string">'hello word'</span></span><br><span class="line">b=<span class="string">'hello word'</span></span><br><span class="line">c=a</span><br><span class="line"><span class="built_in">print</span>(id(a),id(b),id(c))</span><br><span class="line">2211336203376 2211335752432 2211336203376</span><br><span class="line">当字符串中存在空格时，地址不相同。删除任一项时，对其他不影响。</span><br><span class="line">a=<span class="string">'helloaword'</span></span><br><span class="line">b=<span class="string">'helloaword'</span></span><br><span class="line">c=a</span><br><span class="line"><span class="built_in">print</span>(id(a),id(b),id(c))</span><br><span class="line">2211336084528 2211336084528 2211336084528</span><br><span class="line">当字符串中不存在空格时，地址相同。删除任一项时，对其他不影响。</span><br></pre></td></tr></table></figure>
+<h3 id="切片给新字符串赋值"><a href="#切片给新字符串赋值" class="headerlink" title="切片给新字符串赋值"></a>切片给新字符串赋值</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">b=a[:]</span><br><span class="line"><span class="built_in">print</span>(id(a),id(b))</span><br><span class="line">2211336222064 2211336222064</span><br><span class="line">当对字符串进行切片赋值时，两者指向同一地址。</span><br></pre></td></tr></table></figure>
+<h2 id="列表"><a href="#列表" class="headerlink" title="列表"></a>列表</h2><h3 id="给新列表赋值"><a href="#给新列表赋值" class="headerlink" title="给新列表赋值"></a>给新列表赋值</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">a=[1,2,3,1]</span><br><span class="line">b=[1,2,3,1]</span><br><span class="line">相同内容的列表地址不同，但相同数值地址相同。是给列表分出一个内存空间，列表中存储的是每一个元素的所在地址，因此，相同内容的元素地址相同，(a[0]==a[3]==b[0])==True</span><br><span class="line">l1 = [1,2,3,4,5]</span><br><span class="line">l1 = l2</span><br><span class="line">del l1</span><br><span class="line">l1，l2内存地址相同，l1通过赋值给l2，指向了相同的内存区域，del l1相当于将l1的线剪掉，l1不再存在；但l2不受影响，l2=[1,2,3,4,5];当删除其中一个列表的元素时，另一个列表随之变化。</span><br></pre></td></tr></table></figure>
+<h3 id="切片生成新列表"><a href="#切片生成新列表" class="headerlink" title="切片生成新列表"></a>切片生成新列表</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">l1 = [1,2,3,4,5]</span><br><span class="line">l2 = l1[:]</span><br><span class="line">del l1</span><br><span class="line">l2与l1分别指向了不同的内存区域,l1通过切片方式生成一个新的列表，此时l2与l1列表值相同，但是他们不是同一个列表，即l2与l1分别指向了不同的内存区域。</span><br><span class="line">del l1将l1的内存彻底释放掉，l1不再存在；但l2不受影响，l2=[1,2,3,4,5];</span><br><span class="line">删除其中一个列表的元素，另外一个列表不随之变化。</span><br></pre></td></tr></table></figure>
+<h3 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h3><p>浮点型，字符串中存在空格时，列表（分别赋给相同内容），以及切片生成的列表<br>！！！！！！！！！！！指向的内存地址不同！！！！！！！！<br>其他的情况均相同。<br>当用“=”赋值时，地址均相同，删除其中一个不影响另一个。</p>
+<h2 id="copy-浅拷贝-和-copy-deepcopy-深拷贝"><a href="#copy-浅拷贝-和-copy-deepcopy-深拷贝" class="headerlink" title="copy() 浅拷贝 和  copy.deepcopy()深拷贝"></a>copy() 浅拷贝 和  copy.deepcopy()深拷贝</h2><p>基本数据类型中无该函数，组合数据类型中有该函数。<br>1，copy() 浅拷贝（针对最外层单独改变原列表的值）<br>将列表中的元素进行复制，通常将普通的列表能够实现完全的值传递，即将本身的副本<br>对每一个元素进行值拷贝，改变元素的值时，两个列表的值不同时改变，列表本身不相关<br>当原列表中存在了子列表，传递出的是子列表在内存中的地址，在改变元列表中的子列表内的值时，copy出的列表中的子列表同时被改变。<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br></pre></td><td class="code"><pre><span class="line">ls1=[1,2,3]</span><br><span class="line">ls2=ls1.copy()</span><br><span class="line"><span class="built_in">print</span>(<span class="string">'初始化ls1的内容：&#123;&#125;'</span>.format(ls1))</span><br><span class="line"><span class="built_in">print</span>(<span class="string">'初始化ls2的内容：&#123;&#125;'</span>.format(ls2))</span><br><span class="line">ls1[2]=6</span><br><span class="line"><span class="built_in">print</span>(<span class="string">'改变后ls1的内容：&#123;&#125;'</span>.format(ls1))</span><br><span class="line"><span class="built_in">print</span>(<span class="string">'改变后ls2的内容：&#123;&#125;'</span>.format(ls2))</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">ls3=[1,2,[4,5,3]]</span><br><span class="line">ls4=ls3.copy()</span><br><span class="line"><span class="built_in">print</span>(<span class="string">'初始化ls3的内容：&#123;&#125;'</span>.format(ls3))</span><br><span class="line"><span class="built_in">print</span>(<span class="string">'初始化ls4的内容：&#123;&#125;'</span>.format(ls4))</span><br><span class="line">ls3[2][0]=<span class="string">'qaq'</span></span><br><span class="line"><span class="built_in">print</span>(<span class="string">'将ls3中的子列表中的一个内容改变后ls3的内容：&#123;&#125;'</span>.format(ls3))</span><br><span class="line"><span class="built_in">print</span>(<span class="string">'将ls3中的子列表中的一个内容改变后ls4的内容：&#123;&#125;'</span>.format(ls4))</span><br><span class="line">ls3[2]=<span class="string">'qaq'</span></span><br><span class="line"><span class="built_in">print</span>(<span class="string">'将ls3中的列表整体改变后ls3的内容：&#123;&#125;'</span>.format(ls3))</span><br><span class="line"><span class="built_in">print</span>(<span class="string">'将ls3中的列表整体改变后ls4的内容：&#123;&#125;'</span>.format(ls4))</span><br><span class="line"></span><br><span class="line">输出结果如下：</span><br><span class="line">初始化ls1的内容：[1, 2, 3]</span><br><span class="line">初始化ls2的内容：[1, 2, 3]</span><br><span class="line">改变后ls1的内容：[1, 2, 6]</span><br><span class="line">改变后ls2的内容：[1, 2, 3]</span><br><span class="line">初始化ls3的内容：[1, 2, [4, 5, 3]]</span><br><span class="line">初始化ls4的内容：[1, 2, [4, 5, 3]]</span><br><span class="line">将ls3中的子列表中的一个内容改变后ls3的内容：[1, 2, [<span class="string">'qaq'</span>, 5, 3]]</span><br><span class="line">将ls3中的子列表中的一个内容改变后ls4的内容：[1, 2, [<span class="string">'qaq'</span>, 5, 3]]</span><br><span class="line">将ls3中的列表整体改变后ls3的内容：[1, 2, <span class="string">'qaq'</span>]</span><br><span class="line">将ls3中的列表整体改变后ls4的内容：[1, 2, [<span class="string">'qaq'</span>, 5, 3]]</span><br></pre></td></tr></table></figure></p>
+<p>2，import copy<br>copy.deepcopy()   深拷贝（针对列表中任何元素单独改变原列表的值）<br>对每一个元素进行值拷贝，改变其中原列表的值时，包括子列表中的内容也可被改变<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line">import copy <span class="comment">#导入copy包</span></span><br><span class="line">ls3=[1,2,[4,5,3]]</span><br><span class="line">ls4=copy.deepcopy(ls3)</span><br><span class="line"><span class="built_in">print</span>(<span class="string">'初始化ls3的内容：&#123;&#125;'</span>.format(ls3))</span><br><span class="line"><span class="built_in">print</span>(<span class="string">'初始化ls4的内容：&#123;&#125;'</span>.format(ls4))</span><br><span class="line">ls3[2][0]=<span class="string">'qaq'</span></span><br><span class="line"><span class="built_in">print</span>(<span class="string">'将ls3中的子列表中的一个内容改变后ls3的内容：&#123;&#125;'</span>.format(ls3))</span><br><span class="line"><span class="built_in">print</span>(<span class="string">'将ls3中的子列表中的一个内容改变后ls4的内容：&#123;&#125;'</span>.format(ls4))</span><br><span class="line">ls3[2]=<span class="string">'qaq'</span></span><br><span class="line"><span class="built_in">print</span>(<span class="string">'将ls3中的列表整体改变后ls3的内容：&#123;&#125;'</span>.format(ls3))</span><br><span class="line"><span class="built_in">print</span>(<span class="string">'将ls3中的列表整体改变后ls4的内容：&#123;&#125;'</span>.format(ls4))</span><br><span class="line"></span><br><span class="line">输出结果如下：</span><br><span class="line">初始化ls3的内容：[1, 2, [4, 5, 3]]</span><br><span class="line">初始化ls4的内容：[1, 2, [4, 5, 3]]</span><br><span class="line">将ls3中的子列表中的一个内容改变后ls3的内容：[1, 2, [<span class="string">'qaq'</span>, 5, 3]]</span><br><span class="line">将ls3中的子列表中的一个内容改变后ls4的内容：[1, 2, [4, 5, 3]]</span><br><span class="line">将ls3中的列表整体改变后ls3的内容：[1, 2, <span class="string">'qaq'</span>]</span><br><span class="line">将ls3中的列表整体改变后ls4的内容：[1, 2, [4, 5, 3]]</span><br></pre></td></tr></table></figure></p>
+
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+      
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2018/07/16/work2/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
   
     <article id="post-work1" class="article article-type-post  article-index" itemscope itemprop="blogPost">
   <div class="article-inner">

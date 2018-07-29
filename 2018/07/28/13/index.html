@@ -1,22 +1,25 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <meta charset="utf_8">
+  <meta charset="UTF-8">
   
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
   <link rel="dns-prefetch" href="http://yoursite.com">
-  <title>Python基础语法——next | Mango滴博客</title>
+  <title>Python基础语法——高阶函数 | Mango滴博客</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="keywords" content="Python、Web开发">
+  <meta name="description" content="高阶函数匿名函数使用lambda关键字进行修饰，没有显式声明函数的名字。格式如下：lambda 参数：表达式（返回值）注意，在使用匿名函数时，因为其自身的情况限制，匿名函数并不能执行比较复杂的业务逻辑，即函数内的代码不能过多。lambda本身是一个表达式 map函数（映射函数）函数格式：map(func,iterable)返回值：map 对象（迭代器）说明：map函数主要作用是，将指定函数与序列中">
+<meta name="keywords" content="Python、Web开发">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Python基础语法——next">
+<meta property="og:title" content="Python基础语法——高阶函数">
 <meta property="og:url" content="http://yoursite.com/2018/07/28/13/index.html">
 <meta property="og:site_name" content="Mango滴博客">
+<meta property="og:description" content="高阶函数匿名函数使用lambda关键字进行修饰，没有显式声明函数的名字。格式如下：lambda 参数：表达式（返回值）注意，在使用匿名函数时，因为其自身的情况限制，匿名函数并不能执行比较复杂的业务逻辑，即函数内的代码不能过多。lambda本身是一个表达式 map函数（映射函数）函数格式：map(func,iterable)返回值：map 对象（迭代器）说明：map函数主要作用是，将指定函数与序列中">
 <meta property="og:locale" content="default">
-<meta property="og:updated_time" content="2018-07-28T13:50:26.594Z">
+<meta property="og:updated_time" content="2018-07-29T07:02:20.269Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Python基础语法——next">
+<meta name="twitter:title" content="Python基础语法——高阶函数">
+<meta name="twitter:description" content="高阶函数匿名函数使用lambda关键字进行修饰，没有显式声明函数的名字。格式如下：lambda 参数：表达式（返回值）注意，在使用匿名函数时，因为其自身的情况限制，匿名函数并不能执行比较复杂的业务逻辑，即函数内的代码不能过多。lambda本身是一个表达式 map函数（映射函数）函数格式：map(func,iterable)返回值：map 对象（迭代器）说明：map函数主要作用是，将指定函数与序列中">
   
     <link rel="alternative" href="/atom.xml" title="Mango滴博客" type="application/atom+xml">
   
@@ -161,7 +164,7 @@
         
   
     <h1 class="article-title" itemprop="name">
-      Python基础语法——next
+      Python基础语法——高阶函数
     </h1>
   
 
@@ -174,7 +177,12 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        
+        <h2 id="高阶函数"><a href="#高阶函数" class="headerlink" title="高阶函数"></a>高阶函数</h2><h3 id="匿名函数"><a href="#匿名函数" class="headerlink" title="匿名函数"></a>匿名函数</h3><p>使用lambda关键字进行修饰，没有显式声明函数的名字。格式如下：<br>lambda 参数：表达式（返回值）<br>注意，在使用匿名函数时，因为其自身的情况限制，匿名函数并不能执行比较复杂的业务逻辑，即函数内的代码不能过多。lambda本身是一个表达式</p>
+<h3 id="map函数（映射函数）"><a href="#map函数（映射函数）" class="headerlink" title="map函数（映射函数）"></a>map函数（映射函数）</h3><p>函数格式：map(func,iterable)<br>返回值：map 对象（迭代器）<br>说明：map函数主要作用是，将指定函数与序列中的元素进行映射，并完成函数中功能的批量操作，返回值为一个迭代器。我们可以使用for循环或next()函数进行遍历。通常情况下，如果映射的函数较为简单，我们就不单独声明函数，而是采用匿名函数来实现，这样也能提高运行效率。</p>
+<h3 id="reduce函数（归纳函数）"><a href="#reduce函数（归纳函数）" class="headerlink" title="reduce函数（归纳函数）"></a>reduce函数（归纳函数）</h3><p>函数格式：reduce(func,iterator)<br>返回值：返回函数计算结果，具体类型根据函数的返回值来定<br>说明：reduce函数中的func，一定要设为两个参数，用来接收迭代器返回的值。操作顺序为首先接收第一、第二个值，进行运算；运算结果再与第三个值进行运行，以此类推，直到迭代器迭代完全部数据。</p>
+<h3 id="filter函数（过滤函数）"><a href="#filter函数（过滤函数）" class="headerlink" title="filter函数（过滤函数）"></a>filter函数（过滤函数）</h3><p>函数格式：filter(func,iterable)<br>返回值：返回一个迭代器<br>说明：过滤函数与映射函数类似，都需要将函数作用于序列中的每个元素，根据函数判断True或False，返回相关元素。</p>
+<h3 id="递归"><a href="#递归" class="headerlink" title="递归"></a>递归</h3><p>递归概念：就是使用自身函数对自身进行调用，每调用一次将当前次的运行结果保存到函数的堆栈中，以副本形式保存，一直到最后完成全部调用。然后逐一向外将当期函数的结果返回并退出到其调用的位置。<br>在Python中，通常推荐使用迭代，递归本身对内存的消耗和运行效率低下的问题较少使用。</p>
+
       
 
       
@@ -267,9 +275,18 @@
   
 <nav id="article-nav">
   
+    <a href="/2018/07/29/09/" id="article-nav-newer" class="article-nav-link-wrap">
+      <i class="icon-circle-left"></i>
+      <div class="article-nav-title">
+        
+          Python基础语法——函数
+        
+      </div>
+    </a>
+  
   
     <a href="/2018/07/28/12/" id="article-nav-older" class="article-nav-link-wrap">
-      <div class="article-nav-title">Python基础语法——文件</div>
+      <div class="article-nav-title">Python基础语法——文件的输入输出</div>
       <i class="icon-circle-right"></i>
     </a>
   
