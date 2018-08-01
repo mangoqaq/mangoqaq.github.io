@@ -6,20 +6,20 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
   <link rel="dns-prefetch" href="http://yoursite.com">
-  <title>Python基础语法——高阶函数 | Mango滴博客</title>
+  <title>Python基础语法——文件的输入输出 | Mango滴博客</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="高阶函数匿名函数使用lambda关键字进行修饰，没有显式声明函数的名字。格式如下：lambda 参数：表达式（返回值）注意，在使用匿名函数时，因为其自身的情况限制，匿名函数并不能执行比较复杂的业务逻辑，即函数内的代码不能过多。lambda本身是一个表达式 map函数（映射函数）函数格式：map(func,iterable)返回值：map 对象（迭代器）说明：map函数主要作用是，将指定函数与序列中">
+  <meta name="description" content="文件输入输出（IO）格式化函数1234567891011repr()函数格式：repr(Object)返回值：返回一个字符串类型的数据说明：该函数，将参数中的对象进行处理，变为字符串类型，其中如果参数为字符串仍然会在外部加上“”，其内部的字符串的边界符仍然存在。例如：repr(&apos;hello world&apos;)&quot;&apos;hello world&apos;&quot;居左、居右、居中函数rjust()/ljust()/center">
 <meta name="keywords" content="Python、Web开发">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Python基础语法——高阶函数">
+<meta property="og:title" content="Python基础语法——文件的输入输出">
 <meta property="og:url" content="http://yoursite.com/2018/07/28/13/index.html">
 <meta property="og:site_name" content="Mango滴博客">
-<meta property="og:description" content="高阶函数匿名函数使用lambda关键字进行修饰，没有显式声明函数的名字。格式如下：lambda 参数：表达式（返回值）注意，在使用匿名函数时，因为其自身的情况限制，匿名函数并不能执行比较复杂的业务逻辑，即函数内的代码不能过多。lambda本身是一个表达式 map函数（映射函数）函数格式：map(func,iterable)返回值：map 对象（迭代器）说明：map函数主要作用是，将指定函数与序列中">
+<meta property="og:description" content="文件输入输出（IO）格式化函数1234567891011repr()函数格式：repr(Object)返回值：返回一个字符串类型的数据说明：该函数，将参数中的对象进行处理，变为字符串类型，其中如果参数为字符串仍然会在外部加上“”，其内部的字符串的边界符仍然存在。例如：repr(&apos;hello world&apos;)&quot;&apos;hello world&apos;&quot;居左、居右、居中函数rjust()/ljust()/center">
 <meta property="og:locale" content="default">
-<meta property="og:updated_time" content="2018-07-29T07:02:20.269Z">
+<meta property="og:updated_time" content="2018-08-01T11:28:59.588Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Python基础语法——高阶函数">
-<meta name="twitter:description" content="高阶函数匿名函数使用lambda关键字进行修饰，没有显式声明函数的名字。格式如下：lambda 参数：表达式（返回值）注意，在使用匿名函数时，因为其自身的情况限制，匿名函数并不能执行比较复杂的业务逻辑，即函数内的代码不能过多。lambda本身是一个表达式 map函数（映射函数）函数格式：map(func,iterable)返回值：map 对象（迭代器）说明：map函数主要作用是，将指定函数与序列中">
+<meta name="twitter:title" content="Python基础语法——文件的输入输出">
+<meta name="twitter:description" content="文件输入输出（IO）格式化函数1234567891011repr()函数格式：repr(Object)返回值：返回一个字符串类型的数据说明：该函数，将参数中的对象进行处理，变为字符串类型，其中如果参数为字符串仍然会在外部加上“”，其内部的字符串的边界符仍然存在。例如：repr(&apos;hello world&apos;)&quot;&apos;hello world&apos;&quot;居左、居右、居中函数rjust()/ljust()/center">
   
     <link rel="alternative" href="/atom.xml" title="Mango滴博客" type="application/atom+xml">
   
@@ -159,7 +159,7 @@
         
   
     <h1 class="article-title" itemprop="name">
-      Python基础语法——高阶函数
+      Python基础语法——文件的输入输出
     </h1>
   
 
@@ -172,11 +172,15 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <h2 id="高阶函数"><a href="#高阶函数" class="headerlink" title="高阶函数"></a>高阶函数</h2><h3 id="匿名函数"><a href="#匿名函数" class="headerlink" title="匿名函数"></a>匿名函数</h3><p>使用lambda关键字进行修饰，没有显式声明函数的名字。格式如下：<br>lambda 参数：表达式（返回值）<br>注意，在使用匿名函数时，因为其自身的情况限制，匿名函数并不能执行比较复杂的业务逻辑，即函数内的代码不能过多。lambda本身是一个表达式</p>
-<h3 id="map函数（映射函数）"><a href="#map函数（映射函数）" class="headerlink" title="map函数（映射函数）"></a>map函数（映射函数）</h3><p>函数格式：map(func,iterable)<br>返回值：map 对象（迭代器）<br>说明：map函数主要作用是，将指定函数与序列中的元素进行映射，并完成函数中功能的批量操作，返回值为一个迭代器。我们可以使用for循环或next()函数进行遍历。通常情况下，如果映射的函数较为简单，我们就不单独声明函数，而是采用匿名函数来实现，这样也能提高运行效率。</p>
-<h3 id="reduce函数（归纳函数）"><a href="#reduce函数（归纳函数）" class="headerlink" title="reduce函数（归纳函数）"></a>reduce函数（归纳函数）</h3><p>函数格式：reduce(func,iterator)<br>返回值：返回函数计算结果，具体类型根据函数的返回值来定<br>说明：reduce函数中的func，一定要设为两个参数，用来接收迭代器返回的值。操作顺序为首先接收第一、第二个值，进行运算；运算结果再与第三个值进行运行，以此类推，直到迭代器迭代完全部数据。</p>
-<h3 id="filter函数（过滤函数）"><a href="#filter函数（过滤函数）" class="headerlink" title="filter函数（过滤函数）"></a>filter函数（过滤函数）</h3><p>函数格式：filter(func,iterable)<br>返回值：返回一个迭代器<br>说明：过滤函数与映射函数类似，都需要将函数作用于序列中的每个元素，根据函数判断True或False，返回相关元素。</p>
-<h3 id="递归"><a href="#递归" class="headerlink" title="递归"></a>递归</h3><p>递归概念：就是使用自身函数对自身进行调用，每调用一次将当前次的运行结果保存到函数的堆栈中，以副本形式保存，一直到最后完成全部调用。然后逐一向外将当期函数的结果返回并退出到其调用的位置。<br>在Python中，通常推荐使用迭代，递归本身对内存的消耗和运行效率低下的问题较少使用。</p>
+        <h2 id="文件输入输出（IO）"><a href="#文件输入输出（IO）" class="headerlink" title="文件输入输出（IO）"></a>文件输入输出（IO）</h2><h3 id="格式化函数"><a href="#格式化函数" class="headerlink" title="格式化函数"></a>格式化函数</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">repr()</span><br><span class="line">函数格式：repr(Object)</span><br><span class="line">返回值：返回一个字符串类型的数据</span><br><span class="line">说明：该函数，将参数中的对象进行处理，变为字符串类型，其中如果参数为字符串仍然会在外部加上“”，其内部的字符串的边界符仍然存在。例如：</span><br><span class="line">repr(<span class="string">'hello world'</span>)</span><br><span class="line"><span class="string">"'hello world'"</span></span><br><span class="line">居左、居右、居中函数</span><br><span class="line">rjust()/ljust()/center()</span><br><span class="line">函数格式：rjust(int) /ljust(int)/center()</span><br><span class="line">返回值：无</span><br><span class="line">说明：该函数，将输出的字符串居右(居左/居中)对其，左侧(右侧/两侧)使用参数中规定的空格数来对齐</span><br></pre></td></tr></table></figure>
+<h3 id="文本文件的输入输出"><a href="#文本文件的输入输出" class="headerlink" title="文本文件的输入输出"></a>文本文件的输入输出</h3><p>文本文件的操作步骤：</p>
+<h4 id="打开文件"><a href="#打开文件" class="headerlink" title="打开文件"></a>打开文件</h4><p>函数格式：open(file,mode,buffering,encoding)<br>返回值：返回一个文件对象，用来对文件进行操作。<br>说明：该函数主要是进行文件打开操作，如果文件不存在就新建一个文件。如果存在就打开原有文件。</p>
+<h4 id="操作文件"><a href="#操作文件" class="headerlink" title="操作文件"></a>操作文件</h4><h5 id="写文件"><a href="#写文件" class="headerlink" title="写文件"></a>写文件</h5><p>函数格式：write(str)<br>返回值：返回所写入文件的字符串中的字符数。<br>说明：该函数可以一次性写入一个字符串内容，到文件中。每次写入文件是，如果使用的模式为w，那么因为着本次写入为覆盖式写入，即写入内容会替换掉原有文件内容。<br>函数格式：writelines(sequence)<br>返回值：无<br>说明：该函数可以使用列表、字符串、元组、集合、字典等作为参数，其中这些序列中的元素必须为字符串类型，同时也可以一次性写入多行字符串。</p>
+<h5 id="读文件"><a href="#读文件" class="headerlink" title="读文件"></a>读文件</h5><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">函数格式：<span class="built_in">read</span>([size])</span><br><span class="line">返回值：返回按字节逐一读取的数据。</span><br><span class="line">说明：该函数按照字节个数，逐一读取文件中的数据。如果没有规定读取数据的字节大小即size，一直读完文件中全部数据，如果规定了数据的字节大小，只读取规定字节数的内容。</span><br><span class="line"></span><br><span class="line">函数格式：readline()</span><br><span class="line">返回值：返回读取的一行字符串</span><br><span class="line">说明：该函数一次能够读取文件中一行内容，如果需要读取全部内容，需要配合<span class="keyword">while</span>循环使用，注意使用读取到的文件内容作为条件判断，即文件内容为空字符串时，退出循环。</span><br><span class="line"></span><br><span class="line">函数格式：readlines()</span><br><span class="line">返回值：返回一个包含多个字符串的列表。</span><br><span class="line">说明：该函数能够一次性将文件中的数据全部读取出来，然后将文件中每行字符串，作为一个列表的元素，将其组装成一个列表返回。</span><br></pre></td></tr></table></figure>
+<h5 id="关闭文件"><a href="#关闭文件" class="headerlink" title="关闭文件"></a>关闭文件</h5><p>函数格式：close()<br>返回值：无<br>说明：当我们操作文件时，进行相关的写入操作，Python将数据写入文件之前，会将文件保存在文件缓冲区中，在我们调用close()函数时，首先会将文件缓冲区内还没有写入到文件中的数据进行刷新并强制写入文件，然后关闭Python与文件的通道，释放相关资源。</p>
+<h4 id="json格式处理"><a href="#json格式处理" class="headerlink" title="json格式处理"></a>json格式处理</h4><p>在Python中，提供了json模块可以实现对特殊数据结构的读写。比如：列表和字典。<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">1）将嵌套列表或字典转为json格式数据</span><br><span class="line">import json</span><br><span class="line">item = json.dumps(list/dict)</span><br><span class="line">file.writelines(item)</span><br><span class="line"></span><br><span class="line">json.dump(list, file)</span><br><span class="line">2)将文件中的列表或字典json字符串读取出来</span><br><span class="line">f= open(file,mode)</span><br><span class="line">json.load(f)</span><br></pre></td></tr></table></figure></p>
+<h4 id="文件及路径操作函数"><a href="#文件及路径操作函数" class="headerlink" title="文件及路径操作函数"></a>文件及路径操作函数</h4><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br></pre></td><td class="code"><pre><span class="line">1）isfile()与isdir() （os.path模块）</span><br><span class="line">函数格式：os.path.isfile(file)</span><br><span class="line">返回值：bool</span><br><span class="line">说明：根据传入的参数，判断该内容是否为文件类型。如果是文件类型返回True，如果不是返回False</span><br><span class="line">isdir()</span><br><span class="line">函数格式：os.path.isdir(path)</span><br><span class="line">返回值：bool</span><br><span class="line">说明：根据传入的参数，判断内容是否为目录类型，如果是目录就返回True，如果不是返回False</span><br><span class="line">2）创建路径 mkdir()、删除路径removedirs() (os模块)</span><br><span class="line">函数格式：os.mkdir(path)</span><br><span class="line">返回值：无</span><br><span class="line">说明：如果指定路径中不存在该目录，那么创建该目录。注意，如果存在同名目录，则报错</span><br><span class="line"></span><br><span class="line">函数格式：os.removedirs(path)，os.rmdir(path)</span><br><span class="line">返回值：无</span><br><span class="line">说明：删除指定的目录，如果该目录中存在文件或子目录，都不允许删除。否则报错。</span><br><span class="line">3）删除文件 remove() （os模块）</span><br><span class="line">函数格式：os.remove(file)</span><br><span class="line">返回值：无</span><br><span class="line">说明：删除指定的文件，如果该文件不存在则报错。如果文件存在就删除。</span><br><span class="line">4）判断文件/目录是否存在 exists()</span><br><span class="line">函数格式：os.path.exists(file/path)</span><br><span class="line">返回值：bool</span><br><span class="line">说明：判断指定的文件或路径是否存在，如果存在返回True，如果不存在返回False。</span><br><span class="line">5)返回指定路径下，所有子路径 listdir()</span><br><span class="line">函数格式：os.listdir(path)</span><br><span class="line">返回值：list</span><br><span class="line">说明：返回指定路径下，所有的子路径。</span><br><span class="line">6）返回当前路径 getcwd()</span><br><span class="line">函数格式：os.getcwd()</span><br><span class="line">返回值：path</span><br><span class="line">说明：返回当前程序所在的绝对路径</span><br><span class="line">7）返回文件大小 getsize()</span><br><span class="line">函数格式：path.getsize()</span><br><span class="line">返回值：int</span><br><span class="line">说明：返回指定文件的大小，单位是字节</span><br><span class="line">8）重命名 rename()</span><br><span class="line">函数格式：os.rename(oldfilename/oldpath,newfilename/newpath)</span><br><span class="line">返回值：无</span><br><span class="line">说明:将指定的文件名或目录名进行重命名。</span><br><span class="line">9）替换 replace()</span><br><span class="line">函数格式：os.replace(src,dst)</span><br><span class="line">返回值：无</span><br><span class="line">说明：使用目标文件替换掉原文件</span><br></pre></td></tr></table></figure>
+<p>注意：在Python3.x版本中，将pathlib作为内置模块进行了引入。我们可以通过使用from pathlib import Path，使用。<br>其使用的前提为：需要先创建一个path对象，然后对其进行操作。<br>p = Path(‘c:\pythoncode\etc’)<br>具体方法，大家自行学习。</p>
 
       
 
@@ -281,7 +285,7 @@
   
   
     <a href="/2018/07/28/12/" id="article-nav-older" class="article-nav-link-wrap">
-      <div class="article-nav-title">Python基础语法——文件的输入输出</div>
+      <div class="article-nav-title">Python基础语法——高阶函数</div>
       <i class="icon-circle-right"></i>
     </a>
   
